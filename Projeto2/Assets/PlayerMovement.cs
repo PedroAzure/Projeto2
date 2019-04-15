@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float maxSpeed;
+    public float shipBoundaryRadius;
 
     // Start is called before the first frame update
     void Start()
@@ -15,10 +16,40 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
-        pos.y += Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime;
-        pos.x += Input.GetAxis("Horizontal") * maxSpeed * Time.deltaTime; 
 
+ 		//Velocidade
+        Vector3 pos = transform.position;
+        pos.y += Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime; //Movimento Vertical
+        pos.x += Input.GetAxis("Horizontal") * maxSpeed * Time.deltaTime; //Movimento Horizontal
+
+
+        //Restrição de movimento vertical à área da câmera
+        //Top
+        if(pos.y + shipBoundaryRadius > Camera.main.orthographicSize) {
+        	pos.y = Camera.main.orthographicSize - shipBoundaryRadius;
+        }
+
+        //Bottom
+        if(pos.y - shipBoundaryRadius < -Camera.main.orthographicSize) {
+        	pos.y = -Camera.main.orthographicSize + shipBoundaryRadius;
+        }
+
+        //Cálculo de resolução
+        float screenRatio = (float)Screen.width / (float)Screen.height;
+        float widthOrtho = Camera.main.orthographicSize * screenRatio;
+
+        //Restrição lateral de movimento
+        //Right
+        if(pos.x + shipBoundaryRadius > widthOrtho) {
+        	pos.x = widthOrtho - shipBoundaryRadius;
+        }
+
+        //Left
+        if(pos.x - shipBoundaryRadius < -widthOrtho) {
+        	pos.x = -widthOrtho + shipBoundaryRadius;
+        }
+
+        //Atualiza posição
         transform.position = pos;
     }
 
