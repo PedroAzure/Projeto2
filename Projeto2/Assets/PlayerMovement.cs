@@ -16,8 +16,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        pos.y += Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime; 
+        pos.y += Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime;
+        pos.x += Input.GetAxis("Horizontal") * maxSpeed * Time.deltaTime; 
 
         transform.position = pos;
     }
+
+    
 }
