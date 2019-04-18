@@ -11,7 +11,7 @@ public class MoveForward : MonoBehaviour
     {
        Vector3 pos = transform.position; 
 
-       Vector3 velocity = new Vector3(0, maxSpeed * Time.deltaTime, 0);
+       Vector3 velocity = new Vector3(maxSpeed * Time.deltaTime, 0, 0);
 
        pos += velocity;
 
