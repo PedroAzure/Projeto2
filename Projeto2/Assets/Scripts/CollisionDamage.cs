@@ -10,10 +10,23 @@ public class CollisionDamage : MonoBehaviour
 	float invulnTimer = 0;
 
 	int correctLayer;
+
+	public int scoreValue;
+	private GameController gameController;
 	
     void Start(){
 		correctLayer = gameObject.layer;
-	}
+
+		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+		if(gameControllerObject != null) 
+		{
+			gameController = gameControllerObject.GetComponent<GameController>();
+		}
+		if(gameController == null) 
+		{
+			Debug.Log("Cannot find Game Object script");
+		}
+	}	
 
     // Update is called once per frame
     void OnTriggerEnter2D()
@@ -22,7 +35,7 @@ public class CollisionDamage : MonoBehaviour
 
         health--;
         invulnTimer = invulnPeriod;
-        gameObject.layer = 10;
+        gameObject.layer = 10;       
     }
 
     void Update()
@@ -36,6 +49,7 @@ public class CollisionDamage : MonoBehaviour
 
     	if(health <= 0)
         {
+            gameController.AddScore(scoreValue);
         	die();
         }
     }
