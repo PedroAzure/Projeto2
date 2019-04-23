@@ -144,6 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   invulnPeriod: 0
+  scoreValue: 1
 --- !u!114 &8676606567332829836
 MonoBehaviour:
   m_ObjectHideFlags: 0

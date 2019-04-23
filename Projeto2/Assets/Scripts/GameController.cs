@@ -13,14 +13,14 @@ public class GameController : MonoBehaviour
 	public Text scoreText;
 	public Text countdown;
 
-	private float time;
-	private int score;
+	public float time = 30;
+	private int score = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-    	score = 0;
-    	time = 10;
+    	//score = 0;
+    	//time = 10;
     	scoreText.text = "Score: " + score.ToString();
     }
 
@@ -37,13 +37,16 @@ public class GameController : MonoBehaviour
 
     void UpdateTime() 
     {
-    	time -= Time.deltaTime;
-    	countdown.text = "Time: " + time.ToString("f0");
-
-    	if(time <= 0) 
+    	if(time >= 0) 
     	{
-    		callLucio();
+            time -= Time.deltaTime;
+    	    countdown.text = "Time: " + time.ToString("f0");
+    		
     	}
+        else
+        {
+            callLucio();
+        }
     }
 
     public void AddScore(int newScoreValue) 
@@ -54,6 +57,6 @@ public class GameController : MonoBehaviour
 
     void callLucio() 
     {
-    	// chama Lúcio aqui
+    	countdown.text = "Lucio";
     }
 }
