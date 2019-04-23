@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class EnemyMovement : MonoBehaviour
 {
     public float maxSpeed;
@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        pos.y -= maxSpeed;
+        pos.x -= 1f * maxSpeed * Time;
         //pos.x += Input.GetAxis("Horizontal") * maxSpeed * Time.deltaTime; 
 
         transform.position = pos;
@@ -34,5 +34,31 @@ public class EnemyMovement : MonoBehaviour
 
     void OnTriggerEnter2D() {
         Debug.Log("Trigger");
+    }
+}
+*/
+
+public class EnemyMovement : MonoBehaviour
+{
+    public float speed;
+
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+        Vector2 position = transform.position;
+
+        position = new Vector2(position.x - speed * Time.deltaTime, position.y);
+
+        transform.position = position;
+
+        Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2(0,0));
+
+        if(transform.position.x < min.x - 2){
+            Destroy(gameObject);
+        }
     }
 }

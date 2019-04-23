@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageHandler : MonoBehaviour
+public class CollisionDamage : MonoBehaviour
 {
 	public int health = 1;
 	
-	public float invulnPeriod = 0;
+	public float invulnPeriod;
 	float invulnTimer = 0;
 
 	int correctLayer;
-	void Start(){
+	
+    void Start(){
 		correctLayer = gameObject.layer;
 	}
 
@@ -20,7 +21,7 @@ public class DamageHandler : MonoBehaviour
         Debug.Log("Trigger");
 
         health--;
-        invulnTimer = 0.5f;
+        invulnTimer = invulnPeriod;
         gameObject.layer = 10;
     }
 
