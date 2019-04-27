@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 509471469}
   - component: {fileID: 509471468}
   - component: {fileID: 509471467}
+  - component: {fileID: 509471474}
   m_Layer: 8
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -499,10 +500,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c41a9021de34bf5867b0e047052363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5236593322530774391, guid: 01609ba125a326d479b72f8931d7ebd0,
-    type: 3}
-  offset: {x: 0.83, y: -0.1, z: 0}
-  fireDelay: 0.5
+  bulletPrefab: {fileID: 0}
+  offset: {x: 0, y: 0.5, z: 0}
+  fireDelay: 0.25
 --- !u!114 &509471471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,6 +579,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &509471474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509471466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f682f09af12f4fe7ad5bddcb1794f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,6 +1181,7 @@ GameObject:
   - component: {fileID: 1248765983}
   - component: {fileID: 1248765982}
   - component: {fileID: 1248765984}
+  - component: {fileID: 1248765985}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1190,7 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1080115406}
   countdown: {fileID: 162732278}
-  time: 40
+  time: 10
 --- !u!4 &1248765983
 Transform:
   m_ObjectHideFlags: 0
@@ -1220,6 +1233,18 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8676606567332829813, guid: dd995b58141411c41873553d5c7d2eae,
     type: 3}
   enemyRate: 2
+--- !u!114 &1248765985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248765981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f682f09af12f4fe7ad5bddcb1794f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1387400890
 GameObject:
   m_ObjectHideFlags: 0

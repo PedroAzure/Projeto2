@@ -52,6 +52,5 @@ public class PlayerMovement : MonoBehaviour
         //Atualiza posição
         transform.position = pos;
     }
-
     
 }

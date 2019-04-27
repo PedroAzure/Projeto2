@@ -12,6 +12,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        GameController.onEnemyDead += Kill;
+        GameController.onEnemyHit += Hit;
+        
         nextEnemy = enemyRate;
     }
 
@@ -28,5 +31,29 @@ public class EnemySpawner : MonoBehaviour
           
             Instantiate(enemyPrefab, position, Quaternion.identity);
         }        
+    }
+
+    void Kill() 
+    {
+
+        Debug.Log("Eu imimigo morri");       
+        
+        Destroy(gameObject);
+
+    }
+
+    void Hit() 
+    {
+
+        Debug.Log("Eu imimigo fui acertado");       
+        // pode fazer aqui o decremento do life do inimigo
+
+    }
+
+    void OnDisable() 
+    {
+        GameController.onEnemyDead -= Kill; 
+        GameController.onEnemyHit -= Hit; 
+        // caso o objeto não exista mais no jogo, a inscrição dele no evento será retirada;
     }
 }

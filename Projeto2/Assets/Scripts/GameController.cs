@@ -9,6 +9,33 @@ public class GameController : MonoBehaviour
 // controla as coisas da cena do jogo
 
 {
+    // singleton
+    #region Singleton
+    private static GameController _instance;
+    public static GameController Instance 
+    {
+        get
+        {
+            // create logic to create the instance
+            if (_instance == null)
+            {
+                GameObject go = new GameObject("GameController");
+                go.AddComponent<GameController>();
+            }
+
+            return _instance;
+        } 
+    }
+    #endregion
+
+    public delegate void DeadEnemy(); // observer
+    public static event DeadEnemy onEnemyDead; // evento do observer inimigo morto
+
+    public delegate void HitEnemy(); // observer
+    public static event HitEnemy onEnemyHit; // evento do observer inimigo acertado
+
+    public delegate void TimeIsOver(); // observer
+    public static event TimeIsOver onLucioIsComing; // evento do observer tempo acabou - vez do Lúcio
 
 	public Text scoreText;
 	public Text countdown;
@@ -16,6 +43,11 @@ public class GameController : MonoBehaviour
 	public float time = 30;
 	private int score = 0;
 
+    void Awake() 
+    {
+        _instance = this;
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +77,10 @@ public class GameController : MonoBehaviour
     	}
         else
         {
-            callLucio();
+            if (onLucioIsComing != null) 
+            {
+                onLucioIsComing();
+            }
         }
     }
 
@@ -54,9 +89,5 @@ public class GameController : MonoBehaviour
     	score += newScoreValue;
     	UpdateScore();
     }
-
-    void callLucio() 
-    {
-    	countdown.text = "Lucio";
-    }
+  
 }
