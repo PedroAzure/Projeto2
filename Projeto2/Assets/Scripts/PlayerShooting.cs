@@ -7,7 +7,7 @@ public class PlayerShooting : MonoBehaviour
 
     public GameObject bulletPrefab;
 
-    public Vector3 offset = new Vector3(0, 0.5f, 0);
+    public Vector3 offset = new Vector3(0.8f, 0.1f, 0);
 
 	public float fireDelay = 0.25f;
 	float cooldownTimer = 0;

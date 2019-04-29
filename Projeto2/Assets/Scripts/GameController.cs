@@ -54,6 +54,7 @@ public class GameController : MonoBehaviour
     	//score = 0;
     	//time = 10;
     	scoreText.text = "Score: " + score.ToString();
+        PauseMenu.GameIsPaused = false;
     }
 
     // Update is called once per frame
