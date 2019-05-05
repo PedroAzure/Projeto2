@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
@@ -11,9 +12,17 @@ public class DialogManager : MonoBehaviour
 
     public Animator animator;
 
+    public Dialog dialog;
+
+    string nameScene;
+
     void Start()
     {
         sentences = new Queue<string>();
+
+        nameScene = SceneManager.GetActiveScene().name;
+
+        StartDialog(dialog);
     }
 
     public void StartDialog (Dialog dialog)
@@ -39,6 +48,13 @@ public class DialogManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialog();
+
+            if(nameScene == "Dialog") 
+            {
+                // chama próxima cena
+                Debug.Log("chama próxima cena -> tutorial");
+            }
+
             return;
         }
 

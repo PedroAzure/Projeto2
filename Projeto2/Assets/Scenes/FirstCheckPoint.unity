@@ -131,7 +131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &42633169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2019,6 +2019,12 @@ MonoBehaviour:
   nameText: {fileID: 275115323}
   dialogText: {fileID: 1398067282}
   animator: {fileID: 2112598034}
+  dialog:
+    name: Solange Almeida
+    sentences:
+    - Hello boy my name is Sol
+    - Avioes do Forro
+    - Biuriful gueeel
 --- !u!1 &1387400890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,7 +2765,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ce6875e295a69a2448bbb9bfa853811e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
