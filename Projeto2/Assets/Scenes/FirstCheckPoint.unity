@@ -1986,7 +1986,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1248765981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 544b7c491c711af4fb613311bed7904b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f07f1a2db1c88c4987649d365320693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8676606567332829813, guid: dd995b58141411c41873553d5c7d2eae,
@@ -2013,7 +2013,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1248765981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d38a35112dac31a4896920db0b9df65b, type: 3}
+  m_Script: {fileID: 11500000, guid: b4de5120d06474413a335a1ba6e76f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 275115323}

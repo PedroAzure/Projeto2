@@ -40,7 +40,9 @@ public class EnemyMovement : MonoBehaviour
 
 public class EnemyMovement : MonoBehaviour
 {
+
     public float speed;
+    Vector2 min;
 
     void Start()
     {
@@ -49,16 +51,22 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        Moviment();
+    }
+
+    void Moviment() 
+    {
         Vector2 position = transform.position;
 
         position = new Vector2(position.x - speed * Time.deltaTime, position.y);
 
         transform.position = position;
 
-        Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2(0,0));
+        min = Camera.main.ViewportToWorldPoint (new Vector2(0,0));
 
         if(transform.position.x < min.x - 2){
             Destroy(gameObject);
         }
     }
+    
 }
