@@ -911,11 +911,11 @@ MonoBehaviour:
   dialogText: {fileID: 1398067282}
   animator: {fileID: 2112598034}
   dialog:
-    name: Gustavo Lima
+    name: Nome
     sentences:
-    - tche tche
-    - 're re tche tche '
-    - Gustavo Lima e vc
+    - frase 1
+    - frase 2
+    - frase 3
 --- !u!1 &1398067280
 GameObject:
   m_ObjectHideFlags: 0

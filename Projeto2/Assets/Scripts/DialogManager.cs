@@ -53,6 +53,8 @@ public class DialogManager : MonoBehaviour
             {
                 // chama próxima cena
                 Debug.Log("chama próxima cena -> tutorial");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
             }
 
             return;
