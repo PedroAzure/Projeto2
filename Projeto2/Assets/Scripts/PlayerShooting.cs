@@ -5,6 +5,12 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
 
+    // Audio's Components
+
+    public AudioClip MusicClip;
+    public AudioSource MusicSource;
+
+    // Bullet's Components
     public GameObject bulletPrefab;
 
     public Vector3 offset = new Vector3(0.8f, 0.1f, 0);
@@ -18,6 +24,8 @@ public class PlayerShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MusicSource.clip = MusicClip;
+
     	//Vector3 posPlayerShip = GameObject.Find("PlayerShip").transform.position;
         //pos = new Vector3(posPlayerShip.x, posPlayerShip.y, posPlayerShip.z);
     }
@@ -29,6 +37,7 @@ public class PlayerShooting : MonoBehaviour
 
         if(Input.GetButton("Fire1") && cooldownTimer <= 0) {
         	Debug.Log("Pew");
+            MusicSource.Play(); // play music
 
         	//fireDelay = 0.25f;
 

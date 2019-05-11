@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class DialogManager : MonoBehaviour
+public class DialogDois : MonoBehaviour
 {
-    public Text nameText;
+   /*
+
+	public Text nameText;
     public Text dialogText;
     private Queue<string> sentences;
 
@@ -62,4 +63,6 @@ public class DialogManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
     }
+
+	*/
 }

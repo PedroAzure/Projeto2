@@ -15,7 +15,9 @@ GameObject:
   - component: {fileID: 1219184939888497115}
   - component: {fileID: 1219184939888497118}
   - component: {fileID: 6555317755621543398}
-  m_Layer: 8
+  - component: {fileID: 8304597576712545244}
+  - component: {fileID: 7752711909651586266}
+  m_Layer: 9
   m_Name: Bullet01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,8 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95817e3dd67b54544a97fba27eebb2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  invulnPeriod: 0
 --- !u!114 &1219184939888497118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219184939888497112}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 321a11fc8cfba06499e47d4162642f55, type: 3}
   m_Name: 
@@ -171,3 +171,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 2
+--- !u!114 &8304597576712545244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219184939888497112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d42ee80ed4707d4c8a7eaef77cbc15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  invulnPeriod: 0
+  scoreValue: 0
+--- !u!114 &7752711909651586266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219184939888497112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c38ea216fac4fb7ad08d85ef0815ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 5
