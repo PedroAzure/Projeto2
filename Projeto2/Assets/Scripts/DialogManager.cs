@@ -6,9 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
-    public Text nameText;
-    public Text dialogText;
-    private Queue<string> sentences;
+    public Image imageDialog;
+    public Image socorro;
+
+    //public Text dialogText;
+    
+    //private Queue<string> sentences;
+
+    //Set this in the Inspector
+    public Sprite[] m_Sprite;
 
     public Animator animator;
 
@@ -16,9 +22,16 @@ public class DialogManager : MonoBehaviour
 
     string nameScene;
 
+    private Queue<Image> sentences;
+
+    int i = 0;
+
     void Start()
     {
-        sentences = new Queue<string>();
+        //Fetch the Image from the GameObject
+        //imageDialog = GetComponent<Image>();
+
+        sentences = new Queue<Image>();
 
         nameScene = SceneManager.GetActiveScene().name;
 
@@ -29,13 +42,13 @@ public class DialogManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", true);
 
-        Debug.Log("Starting conv with" + dialog.name);
+        //Debug.Log("Starting conv with" + dialog.name);
 
-        nameText.text = dialog.name;
+        //nameText.text = dialog.name;
 
         sentences.Clear();
 
-        foreach (string sentence in dialog.sentences)
+        foreach (Image sentence in dialog.sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -60,11 +73,17 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-    }
+        Image sentence = sentences.Dequeue();
 
+        imageDialog.sprite = m_Sprite[i];
+        i++;
+
+        //StopAllCoroutines();
+        //StartCoroutine(sentence);
+        //StartCoroutine(TypeSentence(sentence));
+        Debug.Log(i);
+    }
+/*
     IEnumerator TypeSentence (string sentence)
     {
         dialogText.text = "";
@@ -75,7 +94,7 @@ public class DialogManager : MonoBehaviour
             yield return null;
         }
     }
-
+  */  
     void EndDialog()
     {
         animator.SetBool("IsOpen", false);
