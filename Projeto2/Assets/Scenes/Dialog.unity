@@ -904,18 +904,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1248765981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4de5120d06474413a335a1ba6e76f92, type: 3}
+  m_Script: {fileID: 11500000, guid: a4b12d5a55b1e0342883044a2b406210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 275115323}
   dialogText: {fileID: 1398067282}
   animator: {fileID: 2112598034}
   dialog:
-    name: Nome
-    sentences:
-    - frase 1
-    - frase 2
-    - frase 3
+    name: 
+    sentences: []
 --- !u!1 &1398067280
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using UnityEngine;
 
+#pragma warning disable
 namespace UnityEditor.Recorder.FrameCapturer
 {
     static class fcAPI

@@ -3,6 +3,7 @@ using UnityEditor.Experimental.UIElements;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 
+#pragma warning disable
 namespace UnityEditor.Recorder
 {
     class PanelSplitter : VisualElement

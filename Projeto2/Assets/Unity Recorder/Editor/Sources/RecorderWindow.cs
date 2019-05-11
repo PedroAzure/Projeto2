@@ -10,6 +10,8 @@ using UnityEngine.Experimental.UIElements.StyleEnums;
 using UnityEditor.Recorder.Input;
 using UnityObject = UnityEngine.Object;
 
+
+#pragma warning disable
 namespace UnityEditor.Recorder
 {   
     /// <summary>

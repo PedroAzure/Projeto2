@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 
+#pragma warning disable
 namespace UnityEditor.Recorder
 {
     class EditableLabel : VisualElement

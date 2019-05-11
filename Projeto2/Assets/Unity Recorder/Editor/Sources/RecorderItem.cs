@@ -5,6 +5,7 @@ using UnityEngine.Experimental.UIElements;
 using UnityEngine.Experimental.UIElements.StyleEnums;
 using UnityObject = UnityEngine.Object;
 
+#pragma warning disable
 namespace UnityEditor.Recorder
 {
     class RecorderItem : VisualElement
