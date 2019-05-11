@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
         {
             nextEnemy = enemyRate;
 
-            Vector3 position = new Vector3(11, Random.Range(-4.4f, 4.3f), 0);
+            Vector3 position = new Vector3(11f, Random.Range(-4.4f, 4.3f), -1f);
           
             Instantiate(enemyPrefab, position, Quaternion.identity);
         }        
