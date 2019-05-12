@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
-
     // Audio's Components
 
     public AudioClip MusicClip;
@@ -40,7 +39,6 @@ public class EnemyShooting : MonoBehaviour
             Debug.Log("Pew Inimigo");
 
             MusicSource.Play(); // play music
-
 
             cooldownTimer = fireDelay;
 

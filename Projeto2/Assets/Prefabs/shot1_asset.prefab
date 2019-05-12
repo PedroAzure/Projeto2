@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   invulnPeriod: 0
+  scoreValue: 0
 --- !u!61 &4306111892009977016
 BoxCollider2D:
   m_ObjectHideFlags: 0

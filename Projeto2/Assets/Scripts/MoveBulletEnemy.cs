@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MoveBulletEnemy : MonoBehaviour
 {
-
     public float maxSpeed = 5f;
 
     // Update is called once per frame
@@ -12,7 +11,7 @@ public class MoveBulletEnemy : MonoBehaviour
     {
        Vector3 pos = transform.position; 
 
-       Vector3 velocity = new Vector3(maxSpeed * Time.deltaTime, 0, 0);
+       Vector3 velocity = new Vector3(maxSpeed * Time.deltaTime, 0f, 0f);
 
        pos -= velocity;
 

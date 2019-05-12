@@ -7,21 +7,31 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed;
     public float shipBoundaryRadius;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Joystick joystick;
 
-    // Update is called once per frame
     void Update()
     {
 
  		//Velocidade
         Vector3 pos = transform.position;
-        pos.y += Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime; //Movimento Vertical
-        pos.x += Input.GetAxis("Horizontal") * maxSpeed * Time.deltaTime; //Movimento Horizontal
+        //pos.y += Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime; //Movimento Vertical
+        //pos.x += Input.GetAxis("Horizontal") * maxSpeed * Time.deltaTime; //Movimento Horizontal
 
+        if(joystick.Horizontal >= .05f)
+        {
+            pos.x += joystick.Horizontal * maxSpeed * Time.deltaTime;
+        } else if(joystick.Horizontal <= -.05f)
+        {
+            pos.x -= -joystick.Horizontal * maxSpeed * Time.deltaTime;
+        }
+
+        if(joystick.Vertical >= .05f)
+        {
+            pos.y += joystick.Vertical * maxSpeed * Time.deltaTime;
+        } else if(joystick.Vertical <= -.05f)
+        {
+            pos.y -= -joystick.Vertical * maxSpeed * Time.deltaTime;
+        }
 
         //Restrição de movimento vertical à área da câmera
         //Top

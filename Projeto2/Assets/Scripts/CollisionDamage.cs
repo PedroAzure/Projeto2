@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CollisionDamage : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class CollisionDamage : MonoBehaviour
 
 	public int scoreValue;
 	private GameController gameController;
-	
+
     void Start(){
 		correctLayer = gameObject.layer;
 
@@ -55,6 +56,6 @@ public class CollisionDamage : MonoBehaviour
     }
 
     void die() {
-    	Destroy(gameObject);
+		Destroy (gameObject); 
     }
 }

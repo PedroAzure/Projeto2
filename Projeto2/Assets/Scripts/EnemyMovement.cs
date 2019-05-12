@@ -40,14 +40,8 @@ public class EnemyMovement : MonoBehaviour
 
 public class EnemyMovement : MonoBehaviour
 {
-
     public float speed;
     Vector2 min;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -56,9 +50,9 @@ public class EnemyMovement : MonoBehaviour
 
     void Moviment() 
     {
-        Vector2 position = transform.position;
+        Vector3 position = transform.position;
 
-        position = new Vector3(position.x - speed * Time.deltaTime, position.y, -1f);
+        position = new Vector3(position.x - speed * Time.deltaTime, position.y, -2f);
 
         transform.position = position;
 
