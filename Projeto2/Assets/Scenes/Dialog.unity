@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageDialog: {fileID: 1479817900}
-  socorro: {fileID: 0}
+  socorro: {fileID: 1479817900}
   m_Sprite:
   - {fileID: 21300000, guid: 27987bca0c7ab43ab9505b9390a15a01, type: 3}
   - {fileID: 21300000, guid: a6d5c47ffb08b431ab91751283b029f6, type: 3}
