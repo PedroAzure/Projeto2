@@ -9,10 +9,11 @@ public class MainMenu : MonoBehaviour
 	public AudioClip MusicClip;
 	public AudioSource MusicSource;
 
-	void Start () 
+
+    void Start () 
 	{
 		MusicSource.clip = MusicClip;
-	}
+    }
 
     public void PlayGame(){
     	MusicSource.Play(); // play music
