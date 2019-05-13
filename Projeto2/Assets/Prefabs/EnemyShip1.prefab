@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8676606567332829834}
   - component: {fileID: 8676606567332829815}
   - component: {fileID: 8676606567332829814}
-  - component: {fileID: 8676606567332829832}
   - component: {fileID: 7786111101622024493}
   - component: {fileID: 8676606567332829836}
   - component: {fileID: 5583782490160975262}
@@ -135,21 +134,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8676606567332829832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8676606567332829813}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d42ee80ed4707d4c8a7eaef77cbc15e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  invulnPeriod: 0
-  scoreValue: 1
 --- !u!114 &7786111101622024493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,13 +146,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4c052ae40820344a477955d749db66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 3
   invulnPeriod: 0
-  scoreValue: 0
+  scoreValue: 1
   explosionRef: {fileID: 4366971343957806912, guid: 30ea01157fdf067498dcf4107b5f9c10,
+    type: 3}
+  explosionHit: {fileID: 4429668347903487438, guid: b267d5f1c343ba548a449fbccdf6ed77,
     type: 3}
   animator: {fileID: 1458292319867171378}
   delay: 0.1
+  matWhite: {fileID: 2100000, guid: 7d9c4f44c50575c4a9f0fa8ae8cf935f, type: 2}
 --- !u!114 &8676606567332829836
 MonoBehaviour:
   m_ObjectHideFlags: 0

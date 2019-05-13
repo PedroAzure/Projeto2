@@ -23,7 +23,6 @@ public class LevelChanger : MonoBehaviour
     {
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
-        animator.SetTrigger("Loading");
     }
 
     public void FadeToNextLevel()
@@ -44,6 +43,15 @@ public class LevelChanger : MonoBehaviour
     {
         levelToLoad = 0;
         animator.SetTrigger("FadeOut");
-        animator.SetTrigger("Loading");
+    }
+
+    public void FadeOutNoChange()
+    {
+        animator.SetTrigger("FadeOutNoChange");
+    }
+
+    public void FinishFade()
+    {
+        animator.ResetTrigger("FadeOutNoChange");
     }
 }

@@ -16,12 +16,17 @@ public class CollisionEnemy : MonoBehaviour
 	private GameController gameController;
 
 	public GameObject explosionRef;
+    public GameObject explosionHit;
 
-	public Animator animator;
+    public Animator animator;
 	public float delay = 0f;
-    void Start(){
-		//explosionRef = Resources.Load("Explosion");
 
+    SpriteRenderer sr;
+    public Material matWhite;
+    private Material matDefault;
+
+    void Start()
+    {
 		correctLayer = gameObject.layer;
 
 		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -33,7 +38,11 @@ public class CollisionEnemy : MonoBehaviour
 		{
 			Debug.Log("Cannot find Game Object script");
 		}
-	}	
+
+        sr = GetComponent<SpriteRenderer>();
+
+        matDefault = sr.material;   
+    }	
 
     // Update is called once per frame
     void OnTriggerEnter2D()
@@ -42,7 +51,21 @@ public class CollisionEnemy : MonoBehaviour
 
         health--;
         invulnTimer = invulnPeriod;
-        gameObject.layer = 10;       
+        sr.material = matWhite;
+        gameObject.layer = 10;
+
+        if (health <= 0)
+        {
+            gameController.AddScore(scoreValue);
+            die();
+        }
+
+        else
+        {
+            Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            Instantiate(explosionHit, position, Quaternion.identity);
+            Invoke("ResetMaterial", .1f);
+        }
     }
 
     void Update()
@@ -53,14 +76,6 @@ public class CollisionEnemy : MonoBehaviour
     	{
     		gameObject.layer = correctLayer;
     	}
-
-    	if(health <= 0)
-        {
-            	gameController.AddScore(scoreValue);
-				die();
-				//animator.SetBool("Dying", true);
-        		//if(anim)
-        }
     }
 
     void die() {
@@ -69,5 +84,10 @@ public class CollisionEnemy : MonoBehaviour
 		Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 		Instantiate(explosionRef, position, Quaternion.identity);
 		Destroy (gameObject); 
+    }
+
+    void ResetMaterial()
+    {
+        sr.material = matDefault;
     }
 }
