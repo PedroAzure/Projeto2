@@ -7,11 +7,6 @@ using UnityEngine.SceneManagement;
 public class DialogManager : MonoBehaviour
 {
     public Image imageDialog;
-    public Image socorro;
-
-    //public Text dialogText;
-    
-    //private Queue<string> sentences;
 
     //Set this in the Inspector
     public Sprite[] m_Sprite;
@@ -19,6 +14,8 @@ public class DialogManager : MonoBehaviour
     public Animator animator;
 
     public Dialog dialog;
+
+    //public LevelChanger levelChanger;
 
     string nameScene;
 
@@ -28,23 +25,22 @@ public class DialogManager : MonoBehaviour
 
     void Start()
     {
-        //Fetch the Image from the GameObject
-        //imageDialog = GetComponent<Image>();
+
+    	//levelChanger = new LevelChanger();
 
         sentences = new Queue<Image>();
 
         nameScene = SceneManager.GetActiveScene().name;
 
         StartDialog(dialog);
+
+        Debug.Log("start");
     }
 
     public void StartDialog (Dialog dialog)
     {
+
         animator.SetBool("IsOpen", true);
-
-        //Debug.Log("Starting conv with" + dialog.name);
-
-        //nameText.text = dialog.name;
 
         sentences.Clear();
 
@@ -62,13 +58,9 @@ public class DialogManager : MonoBehaviour
         {
             EndDialog();
 
-            if(nameScene == "Dialog") 
-            {
-                // chama próxima cena
-                Debug.Log("chama próxima cena -> tutorial");
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //levelChanger.FadeToNextLevel();
+            Debug.Log("Vá para a próxima cena");
 
             return;
         }
@@ -78,23 +70,9 @@ public class DialogManager : MonoBehaviour
         imageDialog.sprite = m_Sprite[i];
         i++;
 
-        //StopAllCoroutines();
-        //StartCoroutine(sentence);
-        //StartCoroutine(TypeSentence(sentence));
-        Debug.Log(i);
+        Debug.Log("DisplayNextSentence" + i);
     }
-/*
-    IEnumerator TypeSentence (string sentence)
-    {
-        dialogText.text = "";
 
-        foreach(char letter in sentence.ToCharArray())
-        {
-            dialogText.text += letter;
-            yield return null;
-        }
-    }
-  */  
     void EndDialog()
     {
         animator.SetBool("IsOpen", false);
