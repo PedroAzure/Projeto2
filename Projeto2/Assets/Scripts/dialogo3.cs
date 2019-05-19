@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class DialogManager : MonoBehaviour
+public class Dialogo3 : MonoBehaviour
 {
     public Image imageDialog;
 
