@@ -42,12 +42,29 @@ public class GameController : MonoBehaviour
 
 	public float time = 30;
 	private int score = 0;
+    
+    //Tempo começa a contar a partir dessa pontuação
+    public int scoreLimit = 10;
+
+    public string status = "WAITING";
+    public string spawner = "STOPPED";
+
+    //ENEMY SPAWNER STATUS
+    private string spawn = "SPAWNING";
+    private string stop = "STOPPED";
+
+    //COUNTDOWN STATUS
+    private string wait = "WAITING";
+    private string count = "COUNTING";
+
+    public SpawnEnemies spawnEnemies;
+    public PopupManager trigger;
 
     void Awake() 
     {
         _instance = this;
-
     }
+
     // Start is called before the first frame update
 
     void Start()
@@ -61,7 +78,20 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	UpdateTime();    
+    	if(status.Equals(wait))
+        {
+           if(score >= scoreLimit)
+           {
+                //countdown.SetActive(true);
+                trigger.StartDialog();
+                status = count;
+           }
+        }
+
+        else if(status.Equals(count))
+        {
+            UpdateTime();    
+        }
     }
 
     void UpdateScore() 

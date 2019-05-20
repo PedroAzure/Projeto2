@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
     public float enemyRate = 5;
     float nextEnemy;
 
+    bool spawning = false;
+
     void Start()
     {
         GameController.onEnemyDead += Kill;
@@ -21,16 +23,19 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nextEnemy -= Time.deltaTime;
-
-        if(nextEnemy <= 0) 
+        if(spawning)
         {
-            nextEnemy = enemyRate;
+            nextEnemy -= Time.deltaTime;
 
-            Vector3 position = new Vector3(11, Random.Range(-4.4f, 4.3f), 0);
-          
-            Instantiate(enemyPrefab, position, Quaternion.identity);
-        }        
+            if(nextEnemy <= 0) 
+            {
+                nextEnemy = enemyRate;
+
+                Vector3 position = new Vector3(11, Random.Range(-4.4f, 4.3f), 0);
+            
+                Instantiate(enemyPrefab, position, Quaternion.identity);
+            }        
+        }
     }
 
     void Kill() 
@@ -55,5 +60,10 @@ public class EnemySpawner : MonoBehaviour
         GameController.onEnemyDead -= Kill; 
         GameController.onEnemyHit -= Hit; 
         // caso o objeto não exista mais no jogo, a inscrição dele no evento será retirada;
+    }
+
+    public void setSpawner(bool check)
+    {
+        this.spawning = check;
     }
 }

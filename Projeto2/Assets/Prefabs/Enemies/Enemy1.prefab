@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 7756943898456825777}
   - component: {fileID: 1458292319867171378}
   m_Layer: 9
-  m_Name: EnemyShip1
+  m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 8676606567332829813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.21, y: 0, z: -2}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9aea7dbd74c6269418eab637a97d7c45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d8f2b5fad4108164486e0344d760c582, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,18 +100,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.34, y: 0.53}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 5.12, y: 3.2}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.82, y: 0.37}
+  m_Size: {x: 3.04, y: 2.04}
   m_EdgeRadius: 0
 --- !u!50 &8676606567332829814
 Rigidbody2D:
@@ -146,10 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4c052ae40820344a477955d749db66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
   invulnPeriod: 0
   scoreValue: 1
-  explosionRef: {fileID: 4366971343957806912, guid: 30ea01157fdf067498dcf4107b5f9c10,
+  explosionRef: {fileID: 2355111445088928046, guid: 6f5a804e04fab314d8a20a2a9b679c35,
     type: 3}
   explosionHit: {fileID: 4429668347903487438, guid: b267d5f1c343ba548a449fbccdf6ed77,
     type: 3}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8676606567332829813}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 544b7c491c711af4fb613311bed7904b, type: 3}
   m_Name: 
@@ -185,7 +185,7 @@ MonoBehaviour:
   MusicSource: {fileID: 7756943898456825777}
   bullet: {fileID: 1219184939888497112, guid: 4dd42d7617add8547b7dcc5b4a36f923, type: 3}
   offset: {x: 0.8, y: 0.1, z: 0}
-  fireDelay: 2
+  fireDelay: 4
 --- !u!114 &2697193113220386948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +205,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8676606567332829813}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
