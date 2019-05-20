@@ -1266,6 +1266,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: enemyRate
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: spawning
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997128123621421880, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2112598034}
     - target: {fileID: 3477854740377509824, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: animator
@@ -1339,7 +1359,7 @@ PrefabInstance:
     - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: scoreLimit
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
@@ -1351,25 +1371,26 @@ PrefabInstance:
       propertyPath: spawnEnemies
       value: 
       objectReference: {fileID: 677020503}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: time
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: shotVariantPrefab
+      value: 
+      objectReference: {fileID: 4640184679802431264, guid: eae113f605d1ace4a9d54166e5c12d86,
+        type: 3}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: changer
+      value: 
+      objectReference: {fileID: 1361112895}
     - target: {fileID: 3477854740377509825, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: enemyRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: spawning
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477854740377509830, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
@@ -1381,11 +1402,6 @@ PrefabInstance:
       propertyPath: dialog.sentences.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5997128123621421880, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 2112598034}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a79f98c775b2260459da5d903f8526b4, type: 3}
@@ -1803,6 +1819,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3113485305553938035, guid: 64e41f0ca6da6724bbf7a0518147d707,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cb8ac8c6dfe5ec8469dfe9aa3340bc46, type: 2}
+    - target: {fileID: 3113485305553938035, guid: 64e41f0ca6da6724bbf7a0518147d707,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113485305553938035, guid: 64e41f0ca6da6724bbf7a0518147d707,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113485305553938035, guid: 64e41f0ca6da6724bbf7a0518147d707,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7395561079605099438, guid: 64e41f0ca6da6724bbf7a0518147d707,
         type: 3}
       propertyPath: offset.x
@@ -1913,26 +1949,6 @@ PrefabInstance:
       propertyPath: gameOverMenuUI
       value: 
       objectReference: {fileID: 1282471755}
-    - target: {fileID: 3113485305553938035, guid: 64e41f0ca6da6724bbf7a0518147d707,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: cb8ac8c6dfe5ec8469dfe9aa3340bc46, type: 2}
-    - target: {fileID: 3113485305553938035, guid: 64e41f0ca6da6724bbf7a0518147d707,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3113485305553938035, guid: 64e41f0ca6da6724bbf7a0518147d707,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3113485305553938035, guid: 64e41f0ca6da6724bbf7a0518147d707,
-        type: 3}
-      propertyPath: m_CullingMode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64e41f0ca6da6724bbf7a0518147d707, type: 3}
 --- !u!1001 &7582565087756637395

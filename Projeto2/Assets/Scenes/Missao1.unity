@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116578189}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 826c7fbe34a429a408a99748bff19196, type: 3}
   m_Name: 
@@ -1790,7 +1790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1320875163
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2026,6 +2026,7 @@ MonoBehaviour:
   dialog:
     sentences:
     - {fileID: 1724031414}
+  changer: {fileID: 573088977}
 --- !u!114 &1548760419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2053,6 +2054,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8676606567332829813, guid: dd995b58141411c41873553d5c7d2eae,
     type: 3}
   enemyRate: 2
+  spawning: 1
 --- !u!114 &1548760421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2068,6 +2070,11 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   countdown: {fileID: 0}
   time: 30
+  scoreLimit: 10
+  status: WAITING
+  spawner: STOPPED
+  spawnEnemies: {fileID: 0}
+  trigger: {fileID: 0}
 --- !u!4 &1548760422
 Transform:
   m_ObjectHideFlags: 0

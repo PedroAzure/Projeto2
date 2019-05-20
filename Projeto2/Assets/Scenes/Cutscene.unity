@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &41789651
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1165,6 +1165,7 @@ MonoBehaviour:
     sentences:
     - {fileID: 1037253290}
     - {fileID: 1037253290}
+  changer: {fileID: 1902361113}
 --- !u!114 &1211761102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,6 +1193,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8676606567332829813, guid: dd995b58141411c41873553d5c7d2eae,
     type: 3}
   enemyRate: 2
+  spawning: 1
 --- !u!114 &1211761104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1207,6 +1209,11 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   countdown: {fileID: 0}
   time: 30
+  scoreLimit: 10
+  status: WAITING
+  spawner: STOPPED
+  spawnEnemies: {fileID: 0}
+  trigger: {fileID: 0}
 --- !u!4 &1211761105
 Transform:
   m_ObjectHideFlags: 0

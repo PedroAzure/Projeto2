@@ -19,6 +19,8 @@ public class DialogManager : MonoBehaviour
 
     private Queue<Image> sentences;
 
+    public LevelChanger changer;
+
     int i = 0;
 
     void Start()
@@ -56,8 +58,8 @@ public class DialogManager : MonoBehaviour
         {
             EndDialog();
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            //levelChanger.FadeToNextLevel();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            changer.FadeToNextLevel();
             //Debug.Log("Vá para a próxima cena");
 
             return;

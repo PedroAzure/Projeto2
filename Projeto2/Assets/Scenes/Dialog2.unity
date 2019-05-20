@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cead4629ec770794f8ed54c5e1ec446e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 77798075}
 --- !u!95 &77798075
 Animator:
   serializedVersion: 3
@@ -1267,6 +1267,15 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   countdown: {fileID: 0}
   time: 30
+  scoreLimit: 10
+  status: WAITING
+  spawner: STOPPED
+  spawnEnemies: {fileID: 0}
+  trigger: {fileID: 0}
+  shotVariantPrefab: {fileID: 0}
+  changer: {fileID: 0}
+  lucioScore: 0
+  shotCount: 0
 --- !u!4 &1248765983
 Transform:
   m_ObjectHideFlags: 0
@@ -1296,6 +1305,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8676606567332829813, guid: dd995b58141411c41873553d5c7d2eae,
     type: 3}
   enemyRate: 2
+  spawning: 1
 --- !u!114 &1248765985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1343,6 +1353,7 @@ MonoBehaviour:
     - {fileID: 234931990}
     - {fileID: 234931990}
     - {fileID: 234931990}
+  changer: {fileID: 0}
 --- !u!1 &1398067280
 GameObject:
   m_ObjectHideFlags: 0
