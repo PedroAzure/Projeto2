@@ -36,9 +36,4 @@ public class FadeOut : MonoBehaviour
 
     }
 
-    public void Fade (bool ok) 
-    {
-
-    }
-
 }

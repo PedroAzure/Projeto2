@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class DialogManager : MonoBehaviour
+public class CutsceneScript : MonoBehaviour
 {
     public Image imageDialog;
 
@@ -15,6 +15,8 @@ public class DialogManager : MonoBehaviour
 
     public Dialog dialog;
 
+    //public LevelChanger levelChanger;
+
     string nameScene;
 
     private Queue<Image> sentences;
@@ -24,6 +26,8 @@ public class DialogManager : MonoBehaviour
     void Start()
     {
 
+        //levelChanger = new LevelChanger();
+
         sentences = new Queue<Image>();
 
         nameScene = SceneManager.GetActiveScene().name;
@@ -32,7 +36,6 @@ public class DialogManager : MonoBehaviour
 
         Debug.Log("start");
     }
-
 
     public void StartDialog (Dialog dialog)
     {
@@ -46,8 +49,7 @@ public class DialogManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();  
-        
+        DisplayNextSentence();
     }
 
     public void DisplayNextSentence ()
@@ -58,7 +60,7 @@ public class DialogManager : MonoBehaviour
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //levelChanger.FadeToNextLevel();
-            //Debug.Log("Vá para a próxima cena");
+            Debug.Log("Vá para a próxima cena");
 
             return;
         }
@@ -68,9 +70,8 @@ public class DialogManager : MonoBehaviour
         imageDialog.sprite = m_Sprite[i];
         i++;
 
-        //Debug.Log("DisplayNextSentence" + i);
+        Debug.Log("DisplayNextSentence" + i);
     }
-
 
     void EndDialog()
     {

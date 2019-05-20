@@ -28,7 +28,6 @@ public class FadeIn : MonoBehaviour
  		if (tempo >= 0) 
         {
             tempo -= Time.deltaTime;
-            Debug.Log(tempo);
         } else 
         {
             if(incremento < 1)
