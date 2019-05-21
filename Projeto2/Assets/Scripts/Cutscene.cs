@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Cutscene : MonoBehaviour
 {
-     public Image imageDialog;
+    public Image imageDialog;
+
+    public AudioClip[] MusicClip;
+    public AudioSource MusicSource;
 
     //Set this in the Inspector
     public Sprite[] m_Sprite;
@@ -15,29 +18,29 @@ public class Cutscene : MonoBehaviour
 
     public Dialog dialog;
 
-    //public LevelChanger levelChanger;
-
     string nameScene;
 
     private Queue<Image> sentences;
 
     int i = 0;
 
+    public LevelChanger changer;
+
     void Start()
     {
-
-    	//levelChanger = new LevelChanger();
+        
 
         sentences = new Queue<Image>();
 
         nameScene = SceneManager.GetActiveScene().name;
 
-        StartDialog(dialog);
+        StartDialog2(dialog);
 
         Debug.Log("start");
     }
 
-    public void StartDialog (Dialog dialog)
+
+    public void StartDialog2 (Dialog dialog)
     {
 
         animator.SetBool("IsOpen", true);
@@ -49,31 +52,36 @@ public class Cutscene : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        DisplayNextSentence2();  
+        
     }
 
-    public void DisplayNextSentence ()
+    public void DisplayNextSentence2 ()
     {
         if (sentences.Count == 0)
         {
-            EndDialog();
+            EndDialog2();
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            //levelChanger.FadeToNextLevel();
-            Debug.Log("Vá para a próxima cena");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            changer.FadeToNextLevel();
+            //Debug.Log("Vá para a próxima cena");
 
             return;
         }
 
         Image sentence = sentences.Dequeue();
 
+        MusicSource.clip = MusicClip[i];
+        MusicSource.Play();
+
         imageDialog.sprite = m_Sprite[i];
         i++;
 
-        Debug.Log("DisplayNextSentence" + i);
+        //Debug.Log("DisplayNextSentence" + i);
     }
 
-    void EndDialog()
+
+    void EndDialog2()
     {
         animator.SetBool("IsOpen", false);
     }

@@ -138,11 +138,11 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41789650}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1399698748}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1214,6 +1214,10 @@ MonoBehaviour:
   spawner: STOPPED
   spawnEnemies: {fileID: 0}
   trigger: {fileID: 0}
+  shotVariantPrefab: {fileID: 0}
+  changer: {fileID: 0}
+  lucioScore: 0
+  shotCount: 0
 --- !u!4 &1211761105
 Transform:
   m_ObjectHideFlags: 0
@@ -1500,7 +1504,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1399698748}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1657,8 +1661,8 @@ RectTransform:
   - {fileID: 1891909604}
   - {fileID: 1220713178}
   - {fileID: 361542136}
-  - {fileID: 41789651}
   - {fileID: 1327148020}
+  - {fileID: 41789651}
   - {fileID: 1952064723}
   m_Father: {fileID: 1902361115}
   m_RootOrder: 0
