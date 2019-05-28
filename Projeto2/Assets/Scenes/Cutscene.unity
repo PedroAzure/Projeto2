@@ -1158,14 +1158,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageDialog: {fileID: 1444224105}
   m_Sprite:
-  - {fileID: 21300000, guid: 95521799c3ded44e2933e0108eb5d0bb, type: 3}
   - {fileID: 21300000, guid: d609d698367b3420d93e959b4929023c, type: 3}
+  - {fileID: 21300000, guid: 95521799c3ded44e2933e0108eb5d0bb, type: 3}
   animator: {fileID: 1220713181}
   dialog:
     sentences:
     - {fileID: 1037253290}
     - {fileID: 1037253290}
-  changer: {fileID: 1902361113}
 --- !u!114 &1211761102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,7 +1192,6 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8676606567332829813, guid: dd995b58141411c41873553d5c7d2eae,
     type: 3}
   enemyRate: 2
-  spawning: 1
 --- !u!114 &1211761104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1209,15 +1207,6 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   countdown: {fileID: 0}
   time: 30
-  scoreLimit: 10
-  status: WAITING
-  spawner: STOPPED
-  spawnEnemies: {fileID: 0}
-  trigger: {fileID: 0}
-  shotVariantPrefab: {fileID: 0}
-  changer: {fileID: 0}
-  lucioScore: 0
-  shotCount: 0
 --- !u!4 &1211761105
 Transform:
   m_ObjectHideFlags: 0

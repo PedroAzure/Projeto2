@@ -19,8 +19,6 @@ public class PlayerCollision : MonoBehaviour
 
 	public GameObject explosionRef;
 
-	public GameObject gameOverMenuUI;
-
     void Start(){
 		correctLayer = gameObject.layer;
 
@@ -57,7 +55,6 @@ public class PlayerCollision : MonoBehaviour
     	if(health <= 0)
         {
             gameController.AddScore(scoreValue);
-			gameOverMenuUI.SetActive(true);
         	die();
         }
 

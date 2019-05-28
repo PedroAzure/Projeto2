@@ -20,8 +20,6 @@ public class PlayerShooting : MonoBehaviour
 	public float fireDelay = 0.25f;
 	float cooldownTimer = 0;
 	
-    public Animator animator;
-
     Vector3 pos;
 	//bool shoot = false;
 
@@ -37,7 +35,6 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         /* for (int i = 0; i < Input.touchCount; i++)
         {
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Input.touches[i].position);
@@ -60,16 +57,15 @@ public class PlayerShooting : MonoBehaviour
 
     public void Fire()
     {
-        if(!animator.GetBool("Locked"))
+        
+
+        if( cooldownTimer <= 0)
         {
-            if( cooldownTimer <= 0)
-            {
-                cooldownTimer = fireDelay;
+            cooldownTimer = fireDelay;
 
-                MusicSource.Play(); // play music
+            MusicSource.Play(); // play music
 
-                Instantiate(bulletPrefab, transform.position + offset, transform.rotation);
-            }
-        }   
+            Instantiate(bulletPrefab, transform.position + offset, transform.rotation);
+        }
     }
 }

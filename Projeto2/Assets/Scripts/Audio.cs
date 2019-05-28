@@ -19,4 +19,9 @@ public class Audio : MonoBehaviour
     {
         
     }
+
+    public void PlaySound () 
+    {
+        
+    }
 }

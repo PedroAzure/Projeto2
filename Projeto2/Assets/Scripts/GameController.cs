@@ -42,36 +42,12 @@ public class GameController : MonoBehaviour
 
 	public float time = 30;
 	private int score = 0;
-    
-    //Tempo começa a contar a partir dessa pontuação
-    public int scoreLimit = 10;
-
-    public string status = "WAITING";
-    public string spawner = "STOPPED";
-
-    //ENEMY SPAWNER STATUS
-    private string spawn = "SPAWNING";
-    private string stop = "STOPPED";
-
-    //COUNTDOWN STATUS
-    private string wait = "WAITING";
-    private string count = "COUNTING";
-    private string arrived = "ARRIVED";
-
-    public SpawnEnemies spawnEnemies;
-    public PopupManager trigger;
-
-    public GameObject shotVariantPrefab;
-    public LevelChanger changer;    
-    public int lucioScore = 0;
-
-    public float shotCount = 0;
 
     void Awake() 
     {
         _instance = this;
-    }
 
+    }
     // Start is called before the first frame update
 
     void Start()
@@ -85,20 +61,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	if(status.Equals(wait))
-        {
-           if(score >= scoreLimit)
-           {
-                //countdown.SetActive(true);
-                trigger.StartDialog();
-                status = count;
-           }
-        }
-
-        else if(status.Equals(count) || status.Equals(arrived))
-        {
-            UpdateTime();    
-        }
+    	UpdateTime();    
     }
 
     void UpdateScore() 
@@ -116,42 +79,17 @@ public class GameController : MonoBehaviour
     	}
         else
         {
-            status = arrived;
-
             if (onLucioIsComing != null) 
             {
-                //onLucioIsComing();
-                
-                shotCount -= Time.deltaTime;
-
-                if(shotCount <= 0)
-                {
-                    Vector3 position = new Vector3(-15f, Random.Range(-4.4f, 4.3f), -1f);
-                
-                    Instantiate(shotVariantPrefab, position, Quaternion.identity);
-
-                    shotCount = 1f;
-                }
-            }
-
-            if(lucioScore >= 10)
-            {
-                changer.FadeToNextLevel();
+                onLucioIsComing();
             }
         }
     }
 
     public void AddScore(int newScoreValue) 
     {
-        if(status.Equals(wait) || status.Equals(count))
-        {
-            score += newScoreValue;
-            UpdateScore();
-        }
-
-        else
-        {
-            lucioScore += 1;
-        }
+    	score += newScoreValue;
+    	UpdateScore();
     }
+  
 }

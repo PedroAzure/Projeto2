@@ -27,7 +27,7 @@ public class LevelChanger : MonoBehaviour
 
     public void FadeToNextLevel()
     {
-        if(SceneManager.GetActiveScene().buildIndex <= 5)
+        if(SceneManager.GetActiveScene().buildIndex <= 3)
             FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
         else
             FadeToLevel(0);
@@ -42,20 +42,6 @@ public class LevelChanger : MonoBehaviour
     public void FadeToHome()
     {
         levelToLoad = 0;
-        animator.SetTrigger("FadeOut");
-    }
-
-    public void RetryLevel()
-    {
-        levelToLoad = SceneManager.GetActiveScene().buildIndex;
-        Time.timeScale = 1f;
-        animator.SetTrigger("FadeOut");
-    }
-
-    public void PauseFadeToHome()
-    {
-        levelToLoad = 0;
-        Time.timeScale = 1f;
         animator.SetTrigger("FadeOut");
     }
 

@@ -24,8 +24,6 @@ public class Cutscene : MonoBehaviour
 
     int i = 0;
 
-    public LevelChanger changer;
-
     void Start()
     {
         
@@ -62,8 +60,8 @@ public class Cutscene : MonoBehaviour
         {
             EndDialog2();
 
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            changer.FadeToNextLevel();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //levelChanger.FadeToNextLevel();
             //Debug.Log("Vá para a próxima cena");
 
             return;
