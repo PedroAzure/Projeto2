@@ -10,7 +10,7 @@ public class FadeIn : MonoBehaviour
 
 	private float incremento = 0;
     private float tempo = 2f;
-    private float timeNewScene = 2f;
+    private float timeNewScene = 2.5f;
 
 
     // Start is called before the first frame update
