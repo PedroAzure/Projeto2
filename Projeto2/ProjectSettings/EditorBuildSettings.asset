@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 71b7ff53bf9c4af499053a864db84f0e
   - enabled: 1
-    path: Assets/Scenes/Texto.unity
+    path: Assets/Scenes/TextScrolling.unity
     guid: af5ae5e1a17cc4cbe9312106ac6465e0
   - enabled: 1
     path: Assets/Scenes/Capitulo1.unity
@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fase1.unity
     guid: 76061f3db93651e49b44fb4696bd101c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dialog2.unity
     guid: 335182579f3db8646aa48b0362b4f56e
   - enabled: 1
@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fase2.unity
     guid: 75c1f2084c0e3404d9ceeeebd502b2cb
+  - enabled: 1
+    path: Assets/Scenes/Missao3.unity
+    guid: e3b345d4fe8ff4239b687c892f9320e8
+  - enabled: 1
+    path: Assets/Scenes/Fase3.unity
+    guid: 5abbdc589ab5548689d17a303d3e7364
   m_configObjects: {}

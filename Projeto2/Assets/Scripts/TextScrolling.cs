@@ -5,11 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class TextScrolling : MonoBehaviour
 {
+    //EventsGame eventsGame;
+    public AudioClip MusicClip;
+    AudioSource MusicSource;
+    GameObject audioSourceGameObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+    
+        audioSourceGameObject = GameObject.Find("MusicObject");
+        MusicSource = audioSourceGameObject.GetComponent<AudioSource>();
+        MusicSource.clip = MusicClip;
+        MusicSource.Play();
+
     }
 
     // Update is called once per frame
@@ -18,7 +27,7 @@ public class TextScrolling : MonoBehaviour
     	Vector3 pos = transform.position;
 
         pos.y += Time.deltaTime * 0.8f;
-        Debug.Log(pos.y);
+       
         //Atualiza posição
         transform.position = pos;
 

@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 
 {
     // singleton
+   
     #region Singleton
     private static GameController _instance;
     public static GameController Instance 
@@ -36,6 +37,9 @@ public class GameController : MonoBehaviour
 
     public delegate void TimeIsOver(); // observer
     public static event TimeIsOver onLucioIsComing; // evento do observer tempo acabou - vez do Lúcio
+
+    public delegate void VolumeSoundChange(); // observer
+    public static event VolumeSoundChange changingVolumeSound; // evento do observer tempo acabou - vez do Lúcio
 
 	public Text scoreText;
 	public Text countdown;
@@ -76,8 +80,6 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-    	//score = 0;
-    	//time = 10;
     	scoreText.text = "Score: " + score.ToString();
         PauseMenu.GameIsPaused = false;
     }
