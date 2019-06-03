@@ -12,6 +12,7 @@ public class LevelChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Time.deltaTime);
         if(Input.touchCount >= 3)
         {
             FadeToNextLevel();
