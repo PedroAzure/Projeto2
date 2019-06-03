@@ -8,11 +8,12 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public Animator gameOverUI;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if((Input.GetKeyDown(KeyCode.Escape)) && (gameOverUI.GetBool("PauseCheck") == false))
         {
             if(GameIsPaused)
             {

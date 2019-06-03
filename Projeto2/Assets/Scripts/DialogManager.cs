@@ -19,7 +19,14 @@ public class DialogManager : MonoBehaviour
 
     private Queue<Image> sentences;
 
+    public LevelChanger changer;
+
+    public GameController controller;
+
     int i = 0;
+
+    public float timer = 2;
+    private bool timerCheck = false;
 
     void Start()
     {
@@ -28,9 +35,18 @@ public class DialogManager : MonoBehaviour
 
         nameScene = SceneManager.GetActiveScene().name;
 
-        StartDialog(dialog);
-
         Debug.Log("start");
+    }
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+
+        if (timer <= 0 && timerCheck == false)
+        {
+            timerCheck = true;
+            StartDialog(dialog);
+        }
     }
 
 
@@ -56,8 +72,8 @@ public class DialogManager : MonoBehaviour
         {
             EndDialog();
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            //levelChanger.FadeToNextLevel();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            changer.FadeToNextLevel();
             //Debug.Log("Vá para a próxima cena");
 
             return;
@@ -71,6 +87,27 @@ public class DialogManager : MonoBehaviour
         //Debug.Log("DisplayNextSentence" + i);
     }
 
+    public void StopMission()
+    {
+        if (sentences.Count == 0)
+        {
+            EndDialog();
+
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //changer.FadeToNextLevel();
+            //Debug.Log("Vá para a próxima cena");
+            controller.spawner = "SPAWNING";
+
+            return;
+        }
+
+        Image sentence = sentences.Dequeue();
+
+        imageDialog.sprite = m_Sprite[i];
+        i++;
+
+        //Debug.Log("DisplayNextSentence" + i);
+    }
 
     void EndDialog()
     {

@@ -14,10 +14,17 @@ public class PlayerCollision : MonoBehaviour
 
 	public int scoreValue;
 	private GameController gameController;
-	
-	public Slider sliderHP;
+
+    public Material matWhite;
+    private Material matDefault;
+    SpriteRenderer sr;
+
+    public Slider sliderHP;
 
 	public GameObject explosionRef;
+
+    public GameObject gameOverMenuUI;
+    public Animator gameOverAnimator;
 
     void Start(){
 		correctLayer = gameObject.layer;
@@ -31,7 +38,11 @@ public class PlayerCollision : MonoBehaviour
 		{
 			Debug.Log("Cannot find Game Object script");
 		}
-	}	
+
+        sr = GetComponent<SpriteRenderer>();
+
+        matDefault = sr.material;
+    }	
 
     // Update is called once per frame
     void OnTriggerEnter2D()
@@ -40,6 +51,7 @@ public class PlayerCollision : MonoBehaviour
 
         health--;
         invulnTimer = invulnPeriod;
+        sr.material = matWhite;
         gameObject.layer = 10;       
     }
 
@@ -50,20 +62,31 @@ public class PlayerCollision : MonoBehaviour
     	if(invulnTimer <= 0)
     	{
     		gameObject.layer = correctLayer;
-    	}
+            Invoke("ResetMaterial", 0);
+        }
 
     	if(health <= 0)
         {
             gameController.AddScore(scoreValue);
-        	die();
+            die();
         }
 
         sliderHP.value = health;
     }
 
     void die() {
-		Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        //Time.timeScale = 0f;
+        gameOverAnimator.SetTrigger("Over");
+        gameOverAnimator.SetBool("PauseCheck", true);
+        Vector3 position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 		Instantiate(explosionRef, position, Quaternion.identity);
     	Destroy(gameObject);
     }
+
+    void ResetMaterial()
+    {
+        sr.material = matDefault;
+    }
+
+
 }

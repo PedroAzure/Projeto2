@@ -12,6 +12,8 @@ public class FadeIn : MonoBehaviour
     private float tempo = 2f;
     private float timeNewScene = 2f;
 
+    public LevelChanger changer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +56,8 @@ public class FadeIn : MonoBehaviour
             timeNewScene -= Time.deltaTime;
         } else 
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            changer.FadeToNextLevel();
         }
     }
 

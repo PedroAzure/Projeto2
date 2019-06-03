@@ -1165,6 +1165,7 @@ MonoBehaviour:
     sentences:
     - {fileID: 1037253290}
     - {fileID: 1037253290}
+  changer: {fileID: 1902361113}
 --- !u!114 &1211761102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1207,6 +1208,15 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   countdown: {fileID: 0}
   time: 30
+  scoreLimit: 10
+  status: WAITING
+  spawner: STOPPED
+  spawnEnemies: {fileID: 0}
+  trigger: {fileID: 0}
+  shotVariantPrefab: {fileID: 0}
+  changer: {fileID: 0}
+  lucioScore: 0
+  shotCount: 0
 --- !u!4 &1211761105
 Transform:
   m_ObjectHideFlags: 0

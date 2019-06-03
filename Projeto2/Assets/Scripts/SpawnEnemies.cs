@@ -6,6 +6,7 @@ public class SpawnEnemies : MonoBehaviour
 {
 
     public GameObject enemyPrefab;
+    public GameController controller;
 
     public float enemyRate = 5;
     float nextEnemy;
@@ -21,16 +22,19 @@ public class SpawnEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nextEnemy -= Time.deltaTime;
-
-        if(nextEnemy <= 0) 
+        if (controller.spawner.Equals("SPAWNING"))
         {
-            nextEnemy = enemyRate;
+            nextEnemy -= Time.deltaTime;
 
-            Vector3 position = new Vector3(11f, Random.Range(-4.4f, 4.3f), -1f);
-          
-            Instantiate(enemyPrefab, position, Quaternion.identity);
-        }        
+            if (nextEnemy <= 0)
+            {
+                nextEnemy = enemyRate;
+
+                Vector3 position = new Vector3(11f, Random.Range(-4.4f, 4.3f), -1f);
+
+                Instantiate(enemyPrefab, position, Quaternion.identity);
+            }
+        }
     }
 
     void Kill() 

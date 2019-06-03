@@ -155,7 +155,7 @@ MonoBehaviour:
     type: 3}
   animator: {fileID: 1458292319867171378}
   delay: 0.1
-  matWhite: {fileID: 2100000, guid: 7d9c4f44c50575c4a9f0fa8ae8cf935f, type: 2}
+  matWhite: {fileID: 2100000, guid: 9b2764551102618479a980818030c8cc, type: 2}
 --- !u!114 &8676606567332829836
 MonoBehaviour:
   m_ObjectHideFlags: 0
