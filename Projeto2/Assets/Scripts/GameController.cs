@@ -68,19 +68,23 @@ public class GameController : MonoBehaviour
     public GameObject shotVariantPrefab;
     public LevelChanger changer;    
     public int lucioScore = 0;
+    public int lucioLimit = 10;
 
     public float shotCount = 0;
+    public float changeSceneTimer = 5;
+   
 
     void Awake() 
     {
         _instance = this;
+       
     }
 
     // Start is called before the first frame update
 
     void Start()
     {
-    	scoreText.text = "Score: " + score.ToString();
+    	scoreText.text = "Inimigos: " + score.ToString();
         PauseMenu.GameIsPaused = false;
     }
 
@@ -105,40 +109,53 @@ public class GameController : MonoBehaviour
 
     void UpdateScore() 
     {
-    	scoreText.text = "Score: " + score.ToString();
+    	scoreText.text = "Inimigos: " + score.ToString();
     }
 
-    void UpdateTime() 
+    void UpdateTime()
     {
-    	if(time >= 0) 
-    	{
+        if (time >= 0)
+        {
             time -= Time.deltaTime;
-    	    countdown.text = "Time: " + time.ToString("f0");
-    		
-    	}
+            countdown.text = "Time: " + time.ToString("f0");
+
+        }
+
         else
         {
             status = arrived;
+        }
 
-            if (onLucioIsComing != null) 
+        if(status.Equals(arrived))
+        {
+            Debug.Log("Entrou Arrived");
+
+            //if (onLucioIsComing != null)
             {
                 //onLucioIsComing();
-                
                 shotCount -= Time.deltaTime;
 
-                if(shotCount <= 0)
+                if (shotCount <= 0 && spawner != stop)
                 {
                     Vector3 position = new Vector3(-15f, Random.Range(-4.4f, 4.3f), -1f);
-                
+
                     Instantiate(shotVariantPrefab, position, Quaternion.identity);
 
                     shotCount = 1f;
                 }
             }
 
-            if(lucioScore >= 10)
+            if (lucioScore >= lucioLimit)
             {
-                changer.FadeToNextLevel();
+                spawner = stop;
+
+                if (spawnEnemies.numberOfEnemies == 0)
+                {
+                    changeSceneTimer -= Time.deltaTime;
+
+                    if (changeSceneTimer <= 0)
+                        changer.FadeToNextLevel();
+                }
             }
         }
     }

@@ -36,7 +36,7 @@ public class EnemyShooting : MonoBehaviour
         cooldownTimer -= Time.deltaTime;
 
         if(cooldownTimer <= 0) {
-            Debug.Log("Pew Inimigo");
+            //Debug.Log("Pew Inimigo");
 
             MusicSource.Play(); // play music
 

@@ -567,6 +567,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1608666867 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3477854741356263394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98363f44a8296481899d8367c8d7db2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1834109900 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3772437578643150073, guid: 638a73a0df2c63d4795a79b613a65812,
@@ -891,6 +903,11 @@ PrefabInstance:
       propertyPath: spawning
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1608666867}
     - target: {fileID: 5997128123621421880, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: animator

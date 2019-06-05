@@ -13,6 +13,8 @@ public class DialogManager : MonoBehaviour
 
     public Animator animator;
 
+    public Animator controlAnimator;
+
     public Dialog dialog;
 
     string nameScene;
@@ -96,6 +98,9 @@ public class DialogManager : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //changer.FadeToNextLevel();
             //Debug.Log("Vá para a próxima cena");
+
+            controlAnimator.SetBool("IsOpen", true);
+
             controller.spawner = "SPAWNING";
 
             return;

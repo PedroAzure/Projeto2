@@ -32,16 +32,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dialog.unity
     guid: 155afd9a7b0ca4bc5a6b82c97b10c5a8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Missao2.unity
     guid: 38f03cd1339a84192a2b34432ac2817a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Fase2.unity
     guid: 75c1f2084c0e3404d9ceeeebd502b2cb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Missao3.unity
     guid: e3b345d4fe8ff4239b687c892f9320e8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Fase3.unity
     guid: 5abbdc589ab5548689d17a303d3e7364
   m_configObjects: {}

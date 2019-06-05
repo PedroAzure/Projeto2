@@ -8,11 +8,16 @@ public class LevelChanger : MonoBehaviour
     public Animator animator;
 
     private int levelToLoad;
-    
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Time.deltaTime);
+        //Debug.Log(Time.deltaTime);
         if(Input.touchCount >= 3)
         {
             FadeToNextLevel();

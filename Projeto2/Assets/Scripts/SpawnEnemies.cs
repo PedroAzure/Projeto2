@@ -11,12 +11,16 @@ public class SpawnEnemies : MonoBehaviour
     public float enemyRate = 5;
     float nextEnemy;
 
+    public float numberOfEnemies = 0;
+
     void Start()
     {
         GameController.onEnemyDead += Kill;
         GameController.onEnemyHit += Hit;
         
         nextEnemy = enemyRate;
+
+        
     }
 
     // Update is called once per frame
@@ -33,6 +37,8 @@ public class SpawnEnemies : MonoBehaviour
                 Vector3 position = new Vector3(11f, Random.Range(-4.4f, 4.3f), -1f);
 
                 Instantiate(enemyPrefab, position, Quaternion.identity);
+
+                numberOfEnemies++;
             }
         }
     }

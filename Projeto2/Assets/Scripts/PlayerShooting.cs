@@ -13,11 +13,11 @@ public class PlayerShooting : MonoBehaviour
 
     // Bullet's Components
     public GameObject bulletPrefab;
-    //public Button fireButton;
+    public Button fireButton;
 
     public Vector3 offset = new Vector3(0.8f, 0.1f, 0);
 
-	public float fireDelay = 0.25f;
+	public float fireDelay = 0.4f;
 	float cooldownTimer = 0;
 	
     Vector3 pos;
@@ -42,23 +42,22 @@ public class PlayerShooting : MonoBehaviour
 
         cooldownTimer -= Time.deltaTime;
 
-       
-            //if(Input.isPressed(fireButton) && cooldownTimer <= 0) {
-                //Debug.Log("Pew");
-                
-            //}
+        if (Input.touches.Equals(fireButton))
+            Fire();
+        //if(Input.isPressed(fireButton) && cooldownTimer <= 0) {
+        //Debug.Log("Pew");
 
-            /*if (shoot) {
-                pos.y += fireDelay;
-                transform.position = pos;
+        //}
 
-            }*/
+        /*if (shoot) {
+            pos.y += fireDelay;
+            transform.position = pos;
+
+        }*/
     }
 
     public void Fire()
     {
-        
-
         if( cooldownTimer <= 0)
         {
             cooldownTimer = fireDelay;

@@ -7,6 +7,6 @@ public class DamageHandler : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D()
     {
-        Debug.Log("Trigger");
+        //Debug.Log("Trigger");
     }
 }

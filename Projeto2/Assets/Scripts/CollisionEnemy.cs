@@ -14,6 +14,7 @@ public class CollisionEnemy : MonoBehaviour
 
 	public int scoreValue;
 	private GameController gameController;
+    public SpawnEnemies spawnEnemies;
 
 	public GameObject explosionRef;
     public GameObject explosionHit;
@@ -41,23 +42,32 @@ public class CollisionEnemy : MonoBehaviour
 
         sr = GetComponent<SpriteRenderer>();
 
-        matDefault = sr.material;   
+        matDefault = sr.material;
+
+        spawnEnemies = gameController.GetComponent<SpawnEnemies>();
     }	
 
     // Update is called once per frame
     void OnTriggerEnter2D()
     {
-        Debug.Log("Trigger");
+        //Debug.Log("Trigger");
 
         health--;
         invulnTimer = invulnPeriod;
         sr.material = matWhite;
+
         gameObject.layer = 10;
 
+        
         if (health <= 0)
         {
-            gameController.AddScore(scoreValue);
+            if (correctLayer == 9)
+            {
+                gameController.AddScore(scoreValue);
+            }
             die();
+
+            spawnEnemies.numberOfEnemies--;
         }
 
         else

@@ -16,11 +16,15 @@ public class Cutscene : MonoBehaviour
 
     public Animator animator;
 
+    public Animator shipAnimator;
+
     public Dialog dialog;
 
     string nameScene;
 
     private Queue<Image> sentences;
+
+    public LevelChanger changer;
 
     int i = 0;
 
@@ -60,8 +64,8 @@ public class Cutscene : MonoBehaviour
         {
             EndDialog2();
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            //levelChanger.FadeToNextLevel();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
             //Debug.Log("Vá para a próxima cena");
 
             return;
@@ -82,5 +86,8 @@ public class Cutscene : MonoBehaviour
     void EndDialog2()
     {
         animator.SetBool("IsOpen", false);
+        shipAnimator.SetBool("Finished", true);
+
+        //changer.FadeToNextLevel();
     }
 }

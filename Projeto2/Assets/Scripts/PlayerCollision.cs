@@ -47,7 +47,7 @@ public class PlayerCollision : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D()
     {
-        Debug.Log("Trigger");
+        //Debug.Log("Trigger");
 
         health--;
         invulnTimer = invulnPeriod;
@@ -67,7 +67,7 @@ public class PlayerCollision : MonoBehaviour
 
     	if(health <= 0)
         {
-            gameController.AddScore(scoreValue);
+            //gameController.AddScore(scoreValue);
             die();
         }
 
