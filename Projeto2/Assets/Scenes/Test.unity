@@ -715,7 +715,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sliderHP
       value: 
-      objectReference: {fileID: 1901159265}
+      objectReference: {fileID: 1336722077}
     - target: {fileID: 5274921894250495065, guid: 1332007cecb64554eb45d2afd05066f9,
         type: 3}
       propertyPath: gameOverMenuUI
@@ -736,6 +736,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5274921894250495065, guid: 1332007cecb64554eb45d2afd05066f9,
+        type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 751608412}
     - target: {fileID: 5274921894250495043, guid: 1332007cecb64554eb45d2afd05066f9,
         type: 3}
       propertyPath: fireButton
@@ -768,6 +773,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1332007cecb64554eb45d2afd05066f9, type: 3}
+--- !u!1 &751608412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8009104808638658130, guid: f1220a05192993d4f9b260dbe586f5cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1901159264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &809039352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3772437578643150078, guid: 638a73a0df2c63d4795a79b613a65812,
@@ -1387,6 +1398,19 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 698197155}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &971542392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971542381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f449786ef64d29c499b560448422653c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 751608412}
 --- !u!1 &1068412112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +1898,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f83334e4a012354e8340a0254167565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1336722077 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2260778194729724362, guid: f1220a05192993d4f9b260dbe586f5cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1901159264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1448509955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,20 +2360,24 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8626879036608063831, guid: f1220a05192993d4f9b260dbe586f5cb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6650009
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197040058012338295, guid: f1220a05192993d4f9b260dbe586f5cb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5400009
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260778194729724362, guid: f1220a05192993d4f9b260dbe586f5cb,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2280584475741109866, guid: f1220a05192993d4f9b260dbe586f5cb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1220a05192993d4f9b260dbe586f5cb, type: 3}
---- !u!114 &1901159265 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7178931915855618288, guid: f1220a05192993d4f9b260dbe586f5cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1901159264}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1901159266 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7178931915281697913, guid: f1220a05192993d4f9b260dbe586f5cb,

@@ -26,8 +26,13 @@ public class PlayerCollision : MonoBehaviour
     public GameObject gameOverMenuUI;
     public Animator gameOverAnimator;
 
+    public GameObject image;
+
+    private Color32 currentColor;
+
     void Start(){
-		correctLayer = gameObject.layer;
+        currentColor = image.GetComponent<Image>().color;
+        correctLayer = gameObject.layer;
 
 		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
 		if(gameControllerObject != null) 
@@ -52,7 +57,8 @@ public class PlayerCollision : MonoBehaviour
         health--;
         invulnTimer = invulnPeriod;
         sr.material = matWhite;
-        gameObject.layer = 10;       
+        gameObject.layer = 10;
+        hit();
     }
 
     void Update()
@@ -88,5 +94,14 @@ public class PlayerCollision : MonoBehaviour
         sr.material = matDefault;
     }
 
+    void hit()
+    {
+        image.GetComponent<Image>().color = new Color32(200, 0, 0, 255);
+        Invoke("colorBack", .3f);
+    }
 
+    void colorBack()
+    {
+        image.GetComponent<Image>().color = currentColor;
+    }
 }
