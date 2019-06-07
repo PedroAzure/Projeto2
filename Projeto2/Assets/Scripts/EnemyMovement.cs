@@ -43,6 +43,15 @@ public class EnemyMovement : MonoBehaviour
     public float speed;
     Vector2 min;
 
+    public GameObject controller;
+    public SpawnEnemies spawner; 
+
+    void Start()
+    {
+        controller = GameObject.FindWithTag("GameController");
+        spawner = controller.GetComponent<SpawnEnemies>(); 
+    }
+
     void Update()
     {
         Moviment();
@@ -59,6 +68,7 @@ public class EnemyMovement : MonoBehaviour
         min = Camera.main.ViewportToWorldPoint (new Vector2(0,0));
 
         if(transform.position.x < min.x - 2){
+            spawner.numberOfEnemies--;
             Destroy(gameObject);
         }
     }

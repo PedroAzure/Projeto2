@@ -1111,7 +1111,7 @@ PrefabInstance:
     - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: time
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
@@ -2188,6 +2188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Top Bars
       objectReference: {fileID: 0}
+    - target: {fileID: 2260778194729724362, guid: f1220a05192993d4f9b260dbe586f5cb,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7178931915166230313, guid: f1220a05192993d4f9b260dbe586f5cb,
         type: 3}
       propertyPath: m_Text
@@ -2369,11 +2374,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.5400009
-      objectReference: {fileID: 0}
-    - target: {fileID: 2260778194729724362, guid: f1220a05192993d4f9b260dbe586f5cb,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2280584475741109866, guid: f1220a05192993d4f9b260dbe586f5cb, type: 3}

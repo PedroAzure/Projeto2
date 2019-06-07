@@ -23,24 +23,24 @@ public class PlayerMovement : MonoBehaviour
 
             if (joystick.Horizontal >= .05f)
             {
-                pos.x += joystick.Horizontal * maxSpeed * Time.deltaTime;
+                pos.x += (joystick.Horizontal * 1.1f) * maxSpeed * Time.deltaTime;
             }
 
             else if (joystick.Horizontal <= -.05f)
             {
-                pos.x -= -joystick.Horizontal * maxSpeed * Time.deltaTime;
+                pos.x -= -(joystick.Horizontal * 1.1f) * maxSpeed * Time.deltaTime;
             }
 
             if (joystick.Vertical >= .15f)
             {
-                pos.y += joystick.Vertical * maxSpeed * Time.deltaTime;
+                pos.y += (joystick.Vertical * 1.1f) * maxSpeed * Time.deltaTime;
                 animator.SetBool("MoveUp", true);
                 animator.SetBool("MoveDown", false);
             }
 
             else if (joystick.Vertical <= -.15f)
             {
-                pos.y -= -joystick.Vertical * maxSpeed * Time.deltaTime;
+                pos.y -= -(joystick.Vertical * 1.1f) * maxSpeed * Time.deltaTime;
                 animator.SetBool("MoveDown", true);
                 animator.SetBool("MoveUp", false);
 
