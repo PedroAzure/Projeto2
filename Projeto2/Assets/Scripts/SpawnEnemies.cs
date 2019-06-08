@@ -6,10 +6,14 @@ public class SpawnEnemies : MonoBehaviour
 {
 
     public GameObject enemyPrefab;
+    public GameObject enemyPrefab2;
     public GameController controller;
 
     public float enemyRate = 5;
     float nextEnemy;
+
+    public int nextEnemyType = 1;
+    public int maxEnemyTypes = 1;
 
     public float numberOfEnemies = 0;
 
@@ -19,8 +23,6 @@ public class SpawnEnemies : MonoBehaviour
         GameController.onEnemyHit += Hit;
         
         nextEnemy = enemyRate;
-
-        
     }
 
     // Update is called once per frame
@@ -32,13 +34,32 @@ public class SpawnEnemies : MonoBehaviour
 
             if (nextEnemy <= 0)
             {
-                nextEnemy = enemyRate;
 
-                Vector3 position = new Vector3(11f, Random.Range(-4.4f, 4.3f), -1f);
+                if (nextEnemyType == 1)
+                {
+                    nextEnemy = enemyRate;
 
-                Instantiate(enemyPrefab, position, Quaternion.identity);
+                    Vector3 position = new Vector3(11f, Random.Range(-4.4f, 4.3f), -1f);
 
-                numberOfEnemies++;
+                    Instantiate(enemyPrefab, position, Quaternion.identity);
+
+                    nextEnemyType = Random.Range(1, maxEnemyTypes + 1);
+
+                    numberOfEnemies++;
+                }
+
+                else
+                {
+                    nextEnemy = enemyRate;
+
+                    Vector3 position = new Vector3(Random.Range(-5f, 2f), 6f, 0);
+
+                    Instantiate(enemyPrefab2, position, Quaternion.identity);
+
+                    nextEnemyType = Random.Range(1, maxEnemyTypes + 1);
+
+                    numberOfEnemies++;
+                }
             }
         }
     }

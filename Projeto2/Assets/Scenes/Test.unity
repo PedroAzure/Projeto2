@@ -872,7 +872,7 @@ PrefabInstance:
     - target: {fileID: 4763389732364195042, guid: e39e520975f7a054dac55f9d605d8240,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4763389732364195042, guid: e39e520975f7a054dac55f9d605d8240,
         type: 3}
@@ -1006,7 +1006,7 @@ PrefabInstance:
     - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: enemyRate
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
@@ -1096,7 +1096,7 @@ PrefabInstance:
     - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: scoreLimit
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
@@ -1271,10 +1271,10 @@ RectTransform:
   - {fileID: 1906533605}
   - {fileID: 1685806045}
   - {fileID: 1336715006}
-  - {fileID: 837724980}
-  - {fileID: 1145657763}
   - {fileID: 1676282072}
   - {fileID: 2135701717}
+  - {fileID: 837724980}
+  - {fileID: 1145657763}
   m_Father: {fileID: 696006621}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1359,7 +1359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &899828343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,7 +1540,7 @@ PrefabInstance:
     - target: {fileID: 1833561735083162655, guid: b60885d8b0d89a849bba94065ef7bb0c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1833561735083162655, guid: b60885d8b0d89a849bba94065ef7bb0c,
         type: 3}
@@ -2075,7 +2075,7 @@ RectTransform:
   - {fileID: 1285025249}
   - {fileID: 123061310}
   m_Father: {fileID: 877428979}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2759,7 +2759,7 @@ PrefabInstance:
     - target: {fileID: 6537826373699644326, guid: ec03f247f8d9ae84c842a8f62cc97581,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6537826373699644326, guid: ec03f247f8d9ae84c842a8f62cc97581,
         type: 3}

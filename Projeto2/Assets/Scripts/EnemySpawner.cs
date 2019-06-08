@@ -6,9 +6,13 @@ public class EnemySpawner : MonoBehaviour
 {
 
     public GameObject enemyPrefab;
+    public GameObject enemyPrefab2;
 
     public float enemyRate = 5;
     float nextEnemy;
+    int nextEnemyType = 1;
+
+    public int maxEnemyTypes = 1;
 
     void Start()
     {
@@ -25,11 +29,27 @@ public class EnemySpawner : MonoBehaviour
 
         if(nextEnemy <= 0) 
         {
-            nextEnemy = enemyRate;
+            if (nextEnemyType == 1)
+            {
+                nextEnemy = enemyRate;
 
-            Vector3 position = new Vector3(11, Random.Range(-4.4f, 4.3f), 0);
-          
-            Instantiate(enemyPrefab, position, Quaternion.identity);
+                Vector3 position = new Vector3(11, Random.Range(-4.4f, 4.3f), 0);
+
+                Instantiate(enemyPrefab, position, Quaternion.identity);
+
+               
+            }
+
+            else
+            {
+                nextEnemy = enemyRate;
+
+                Vector3 position = new Vector3(Random.Range(-4.4f, 4.3f), 5 , 0);
+
+                Instantiate(enemyPrefab2, position, Quaternion.identity);
+
+                nextEnemyType = Random.Range(1, maxEnemyTypes);
+            }
         }        
     }
 
