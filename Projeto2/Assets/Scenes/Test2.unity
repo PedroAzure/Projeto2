@@ -575,11 +575,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageDialog: {fileID: 1374777015}
   m_Sprite:
-  - {fileID: 21300000, guid: c088bd4eedb0c45529bc9bca6bfb604f, type: 3}
+  - {fileID: 21300000, guid: deda3c73439dc4e5ba5d8587316bb43a, type: 3}
+  - {fileID: 21300000, guid: e9a37a04bb6d5486f82efeb0b28016d8, type: 3}
   animator: {fileID: 1590937638}
   controlAnimator: {fileID: 2121157148}
   dialog:
     sentences:
+    - {fileID: 532639650}
     - {fileID: 532639650}
   changer: {fileID: 0}
   controller: {fileID: 501416888}
@@ -870,6 +872,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8963979370424435695, guid: 1c316a3573e45d848a440e16e26c7ba2,
+        type: 3}
+      propertyPath: parallax
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c316a3573e45d848a440e16e26c7ba2, type: 3}
 --- !u!1001 &850775564
@@ -1100,7 +1107,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 370ff268b74e74967ae9b6c712038d39, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc9da6c3ca682453995f8eddaf64eee1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

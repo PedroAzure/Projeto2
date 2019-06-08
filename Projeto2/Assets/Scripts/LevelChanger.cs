@@ -33,7 +33,7 @@ public class LevelChanger : MonoBehaviour
 
     public void FadeToNextLevel()
     {
-        if(SceneManager.GetActiveScene().buildIndex <= 6)
+        if(SceneManager.GetActiveScene().buildIndex <= 7)
             FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
         else
             FadeToLevel(0);

@@ -17,7 +17,7 @@ public class DialogManager : MonoBehaviour
 
     public Dialog dialog;
 
-    string nameScene;
+    //string nameScene;
 
     private Queue<Image> sentences;
 
@@ -35,7 +35,7 @@ public class DialogManager : MonoBehaviour
 
         sentences = new Queue<Image>();
 
-        nameScene = SceneManager.GetActiveScene().name;
+        //nameScene = SceneManager.GetActiveScene().name;
 
         Debug.Log("start");
     }

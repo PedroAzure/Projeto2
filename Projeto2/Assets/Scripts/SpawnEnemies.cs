@@ -52,7 +52,7 @@ public class SpawnEnemies : MonoBehaviour
                 {
                     nextEnemy = enemyRate;
 
-                    Vector3 position = new Vector3(Random.Range(-5f, 2f), 6f, 0);
+                    Vector3 position = new Vector3(Random.Range(-5f, 2f), 7f, 0);
 
                     Instantiate(enemyPrefab2, position, Quaternion.identity);
 
