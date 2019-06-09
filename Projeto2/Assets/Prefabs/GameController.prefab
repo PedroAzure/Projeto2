@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3477854740377509885}
   - component: {fileID: 3477854740377509884}
   - component: {fileID: 3477854740377509826}
-  - component: {fileID: 3477854740377509827}
   - component: {fileID: 3477854740377509830}
   - component: {fileID: 3477854740377509825}
   - component: {fileID: 5997128123621421880}
@@ -52,11 +51,18 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   countdown: {fileID: 0}
   time: 60
+  score: 0
   scoreLimit: 10
   status: WAITING
   spawner: STOPPED
   spawnEnemies: {fileID: 0}
   trigger: {fileID: 0}
+  shotVariantPrefab: {fileID: 0}
+  changer: {fileID: 0}
+  lucioScore: 0
+  lucioLimit: 10
+  shotCount: 0
+  changeSceneTimer: 5
 --- !u!114 &3477854740377509826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,20 +77,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8676606567332829813, guid: dd995b58141411c41873553d5c7d2eae,
     type: 3}
+  enemyPrefab2: {fileID: 0}
+  controller: {fileID: 0}
   enemyRate: 2
-  spawning: 1
---- !u!114 &3477854740377509827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3477854740377509887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f682f09af12f4fe7ad5bddcb1794f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  nextEnemyType: 1
+  maxEnemyTypes: 1
+  numberOfEnemies: 0
 --- !u!114 &3477854740377509830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,8 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1c131a104b85a47a00e8d5fe476a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicClip: {fileID: 8300000, guid: 22f26bcb5b50ace4295e272a5f4abb51, type: 3}
-  MusicSource: {fileID: 3477854740377509825}
 --- !u!82 &3477854740377509825
 AudioSource:
   m_ObjectHideFlags: 0
@@ -207,12 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db36fc81f51f5f84e862fa8cf6d866b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageDialog: {fileID: 0}
-  socorro: {fileID: 0}
-  m_Sprite: []
   animator: {fileID: 0}
-  dialog:
-    sentences: []
 --- !u!114 &5832230612084840929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,5 +216,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90844a57ec2f2f54f85dcc810318b8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog:
-    sentences: []

@@ -1147,30 +1147,33 @@ PrefabInstance:
     - target: {fileID: 3477854740377509825, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477854740377509825, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: m_Volume
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509825, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b52fac232ffa34fe48db59fb6626c058, type: 3}
     - target: {fileID: 3477854740377509830, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5832230612084840929, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: dialog.sentences.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509827, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a79f98c775b2260459da5d903f8526b4, type: 3}
 --- !u!114 &874800903 stripped
 MonoBehaviour:

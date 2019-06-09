@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
 {
+
+    public delegate void ElenaGetWoman(); // observer
+    public static event ElenaGetWoman elenaGetWoman; // evento do observer : Elena recrutou mais uma mulher
+
 	public int health = 1;
 	
 	public float invulnPeriod;
@@ -50,15 +54,31 @@ public class PlayerCollision : MonoBehaviour
     }	
 
     // Update is called once per frame
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D col)
     {
         //Debug.Log("Trigger");
 
-        health--;
-        invulnTimer = invulnPeriod;
-        sr.material = matWhite;
-        gameObject.layer = 10;
-        hit();
+
+        if (col.tag == "girls") 
+        {
+            if (elenaGetWoman != null) 
+            {
+                elenaGetWoman();
+            }
+        } 
+        else if (col.tag == "lucio") 
+        {
+            die();
+        }
+        else 
+        {
+            health--;
+            invulnTimer = invulnPeriod;
+            sr.material = matWhite;
+            gameObject.layer = 10;
+            hit();
+        }
+
     }
 
     void Update()

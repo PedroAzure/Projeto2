@@ -1456,8 +1456,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8676606567332829813, guid: dd995b58141411c41873553d5c7d2eae,
     type: 3}
+  enemyPrefab2: {fileID: 0}
   controller: {fileID: 0}
   enemyRate: 2
+  nextEnemyType: 1
+  maxEnemyTypes: 1
   numberOfEnemies: 0
 --- !u!114 &1248765985
 MonoBehaviour:
@@ -1548,6 +1551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283907526}
   - component: {fileID: 1283907525}
+  - component: {fileID: 1283907527}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -1665,6 +1669,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1283907527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283907524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1c131a104b85a47a00e8d5fe476a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1360250611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1677,6 +1693,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShipHover
       objectReference: {fileID: 0}
+    - target: {fileID: 8879524363068348938, guid: c971d358312efdf4ab6100644bfc9f28,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 76ea7d74b917e21449290657228cba56, type: 2}
     - target: {fileID: 8879524363068348933, guid: c971d358312efdf4ab6100644bfc9f28,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1732,11 +1753,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8879524363068348938, guid: c971d358312efdf4ab6100644bfc9f28,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 76ea7d74b917e21449290657228cba56, type: 2}
     - target: {fileID: 8879524363412846461, guid: c971d358312efdf4ab6100644bfc9f28,
         type: 3}
       propertyPath: m_Enabled

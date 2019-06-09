@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 	public AudioClip MusicClip;
 	public AudioSource MusicSource;
 
-    EventsGame eventsGame;
+    //EventsGame eventsGame;
 
     void Start () 
 	{
