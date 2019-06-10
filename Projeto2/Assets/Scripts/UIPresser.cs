@@ -9,8 +9,8 @@ public class UIPresser : MonoBehaviour, IPointerDownHandler,
 {
     bool pressed = false;
 
-    public AudioClip MusicClip;
-    public AudioSource MusicSource;
+    //public AudioClip MusicClip;
+    //public AudioSource MusicSource;
 
     // Bullet's Components
     public GameObject bulletPrefab;
@@ -52,7 +52,7 @@ public class UIPresser : MonoBehaviour, IPointerDownHandler,
         {
             cooldownTimer = fireDelay;
 
-            MusicSource.Play(); // play music
+            //MusicSource.Play(); // play music
 
             Instantiate(bulletPrefab, ship.transform.position + offset, transform.rotation);
         }

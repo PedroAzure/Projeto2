@@ -32,8 +32,6 @@ public class CollisionDamage : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D()
     {
-        //Debug.Log("Trigger");
-
         health--;
         invulnTimer = invulnPeriod;
         gameObject.layer = 10;       

@@ -38,9 +38,6 @@ public class GameController : MonoBehaviour
     public delegate void TimeIsOver(); // observer
     public static event TimeIsOver onLucioIsComing; // evento do observer tempo acabou - vez do Lúcio
 
-    public delegate void VolumeSoundChange(); // observer
-    public static event VolumeSoundChange changingVolumeSound; // evento do observer tempo acabou - vez do Lúcio
-
 	public Text scoreText;
 	public Text countdown;
 
@@ -173,4 +170,5 @@ public class GameController : MonoBehaviour
             lucioScore += 1;
         }
     }
+
 }
