@@ -106,6 +106,8 @@ public class DialogManager : MonoBehaviour
 
             controller.spawner = "SPAWNING";
 
+            controller.tempoConta = true;
+
             return;
         }
 

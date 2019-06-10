@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class TextScrolling : MonoBehaviour
 {
     //EventsGame eventsGame;
+
+    public LevelChanger changer;
     public AudioClip MusicClip;
     AudioSource MusicSource;
     GameObject audioSourceGameObject;
@@ -33,7 +35,8 @@ public class TextScrolling : MonoBehaviour
 
         if (pos.y > 14) 
         {
-        	SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            changer.FadeToNextLevel();
         }
     }
 }

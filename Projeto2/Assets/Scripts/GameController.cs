@@ -41,9 +41,14 @@ public class GameController : MonoBehaviour
 	public Text scoreText;
 	public Text countdown;
 
+
+    public int numFase = 1;
 	public float time = 30;
 	public int score = 0;
-    
+
+    public bool tempoConta = false;
+    public float tempoSemTiro = 10f;
+
     //Tempo começa a contar a partir dessa pontuação
     public int scoreLimit = 10;
 
@@ -69,6 +74,9 @@ public class GameController : MonoBehaviour
 
     public float shotCount = 0;
     public float changeSceneTimer = 5;
+
+    public Animator lucioShip;
+    private bool lucioTriggered = false;
    
 
     void Awake() 
@@ -88,13 +96,19 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(tempoConta == true)
+        {
+            tempoSemTiro -= Time.deltaTime;
+        }
+
     	if(status.Equals(wait))
         {
-           if(score >= scoreLimit)
+           if((score >= scoreLimit && lucioTriggered == false) || (tempoSemTiro < 0 && lucioTriggered == false)
            {
                 //countdown.SetActive(true);
-                trigger.StartDialog();
-                status = count;
+                lucioShip.SetTrigger("Entry");
+                lucioTriggered = true;
+                Invoke("StartCounting", 5f);
            }
         }
 
@@ -106,7 +120,12 @@ public class GameController : MonoBehaviour
 
     void UpdateScore() 
     {
-    	scoreText.text = "Inimigos: " + score.ToString();
+        if (numFase == 1)
+        {
+            scoreText.text = "Inimigos: " + score.ToString();
+        }
+        //else
+          //  scoreText.text = "Resgate:  " + score.ToString();
     }
 
     void UpdateTime()
@@ -171,4 +190,9 @@ public class GameController : MonoBehaviour
         }
     }
 
+    void StartCounting()
+    {
+        trigger.StartDialog();
+        status = count;
+    }
 }

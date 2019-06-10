@@ -1434,6 +1434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1515268c2e4410184e97086a58aa55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changer: {fileID: 2053379372}
   MusicClip: {fileID: 0}
 --- !u!1001 &1026750216
 PrefabInstance:
