@@ -42,7 +42,7 @@ public class LevelChanger : MonoBehaviour
 
     public void OnFadeComplete()
     {
-        SceneManager.LoadScene(levelToLoad);
+        StartCoroutine(BeginLoad()); 
     }
 
     public void FadeToHome()
@@ -73,5 +73,38 @@ public class LevelChanger : MonoBehaviour
     public void FinishFade()
     {
         animator.ResetTrigger("FadeOutNoChange");
+    }
+
+    /*public void MudarTela(string nomeTela)
+    {
+        //Começa a função de carregar tela
+        StartCoroutine(CarregarTela(nomeTela));
+    }
+
+    IEnumerator CarregarTela(string nomeTela)
+    {
+        //cria uma operação assíncrona para carregar a tela sem travar o jogo
+        
+        carregando.SetActive(true);//gameobject
+        carregando.GetComponent<Animator>().Play(0);
+        //enquanto a tela não for carregada
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nomeTela);
+        while (!asyncLoad.isDone)
+        {
+            //Não faça nada
+            yield return null;
+        }
+        //Depois que a cena for carregada
+    }*/
+
+    IEnumerator BeginLoad()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelToLoad);
+
+        while (!asyncLoad.isDone)
+        {
+            //Não faça nada
+            yield return null;
+        }
     }
 }

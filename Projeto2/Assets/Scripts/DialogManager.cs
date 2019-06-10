@@ -25,6 +25,9 @@ public class DialogManager : MonoBehaviour
 
     public GameController controller;
 
+    public Animator cutsceneStage;
+    int currentScene = 0;
+
     int i = 0;
 
     public float timer = 2;
@@ -117,5 +120,21 @@ public class DialogManager : MonoBehaviour
     void EndDialog()
     {
         animator.SetBool("IsOpen", false);
+    }
+
+    public void nextScene()
+    {
+        Debug.Log("Clique");
+
+        if (currentScene <= 10)
+        {
+            currentScene++;
+            cutsceneStage.SetInteger("Cena", currentScene);
+        }
+
+        else
+        {
+            DisplayNextSentence();
+        }
     }
 }
