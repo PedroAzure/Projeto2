@@ -1165,9 +1165,6 @@ MonoBehaviour:
     sentences:
     - {fileID: 1037253290}
     - {fileID: 1037253290}
-  changer: {fileID: 1902361113}
-  controller: {fileID: 0}
-  timer: 0
 --- !u!114 &1211761102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,7 +1177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f682f09af12f4fe7ad5bddcb1794f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicSource: {fileID: 0}
 --- !u!114 &1211761103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1195,7 +1191,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8676606567332829813, guid: dd995b58141411c41873553d5c7d2eae,
     type: 3}
-  controller: {fileID: 0}
   enemyRate: 2
 --- !u!114 &1211761104
 MonoBehaviour:
@@ -1212,16 +1207,6 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   countdown: {fileID: 0}
   time: 30
-  score: 0
-  scoreLimit: 10
-  status: WAITING
-  spawner: STOPPED
-  spawnEnemies: {fileID: 0}
-  trigger: {fileID: 0}
-  shotVariantPrefab: {fileID: 0}
-  changer: {fileID: 0}
-  lucioScore: 0
-  shotCount: 0
 --- !u!4 &1211761105
 Transform:
   m_ObjectHideFlags: 0
@@ -1689,7 +1674,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1891909603}
-  gameOverUI: {fileID: 0}
 --- !u!114 &1399698750
 MonoBehaviour:
   m_ObjectHideFlags: 0

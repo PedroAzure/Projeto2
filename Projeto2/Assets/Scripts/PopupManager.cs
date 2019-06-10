@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PopupManager : MonoBehaviour
 {
+
+    public DialogFaseUm faseUm;
+
     //public Image imageDialog;
     //public Image socorro;
 
@@ -44,6 +47,8 @@ public class PopupManager : MonoBehaviour
         animator.SetBool("IsOpen", true);
 
         Invoke("EndDialog", 1);
+
+        faseUm.PlaySound();
         //animator.SetBool("IsOpen", false);
 
         //Debug.Log("Starting conv with" + dialog.name);

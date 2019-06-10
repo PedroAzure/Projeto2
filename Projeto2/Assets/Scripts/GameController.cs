@@ -70,6 +70,7 @@ public class GameController : MonoBehaviour
     public float shotCount = 0;
     public float changeSceneTimer = 5;
    
+    
 
     void Awake() 
     {
@@ -93,6 +94,13 @@ public class GameController : MonoBehaviour
            if(score >= scoreLimit)
            {
                 //countdown.SetActive(true);
+
+                // start do dialogo do Lúcio dizendo para Elena que está chegando
+
+                
+
+                //GetComponent<AudioSource>().Play();
+
                 trigger.StartDialog();
                 status = count;
            }
