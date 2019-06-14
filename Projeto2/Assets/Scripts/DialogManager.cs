@@ -33,6 +33,8 @@ public class DialogManager : MonoBehaviour
     public float timer = 2;
     private bool timerCheck = false;
 
+    //public Animator nextDialog;
+
     void Start()
     {
 
@@ -139,4 +141,7 @@ public class DialogManager : MonoBehaviour
             DisplayNextSentence();
         }
     }
+
+
+
 }

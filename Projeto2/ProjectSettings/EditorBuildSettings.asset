@@ -33,6 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Dialog.unity
     guid: 155afd9a7b0ca4bc5a6b82c97b10c5a8
   - enabled: 1
+    path: Assets/Scenes/ElenaComBolinhas.unity
+    guid: c0bc8d2e2feb94b8bad37bda70c33cb1
+  - enabled: 1
+    path: Assets/Scenes/CenaFinalFinal.unity
+    guid: 4a540022ea965cc4ab54821201e7f7b4
+  - enabled: 0
     path: Assets/Scenes/Test2.unity
     guid: 171d931bc931eb74a8cd6d9b5c569c74
   - enabled: 0

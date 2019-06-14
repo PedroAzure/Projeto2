@@ -7,9 +7,15 @@ public class PlayerCollision : MonoBehaviour
 {
 
     public delegate void ElenaGetWoman(); // observer
-    public static event ElenaGetWoman elenaGetWoman; // evento do observer : Elena recrutou mais uma mulher
+    public static event ElenaGetWoman ElenaGetWomanSubscriber; // evento do observer : Elena recrutou mais uma mulher
 
-	public int health = 1;
+    public delegate void LostWoman(); // observer
+    public static event LostWoman LostWomanSubscriber; // evento do observer : Elena recrutou mais uma mulher
+
+    public delegate void ElenaGetPowerUp(); // observer
+    public static event ElenaGetPowerUp ElenaGetPowerUpSubscriber; // powerUp subscriber
+
+    public int health = 1;
 	
 	public float invulnPeriod;
 	float invulnTimer = 0;
@@ -61,15 +67,32 @@ public class PlayerCollision : MonoBehaviour
 
         if (col.tag == "girls") 
         {
-            if (elenaGetWoman != null) 
+            if (ElenaGetWomanSubscriber != null) 
             {
-                elenaGetWoman();
+                ElenaGetWomanSubscriber();
             }
-        } 
+        }
+
+        else if (col.tag == "powerUp")
+        {
+            if (ElenaGetPowerUpSubscriber != null)
+            {
+                ElenaGetPowerUpSubscriber();
+
+            }
+
+        }
+
         else if (col.tag == "lucio") 
         {
+            /*if (LostWomanSubscriber != null)
+            {
+                Debug.Log("LucioCollision");
+                LostWomanSubscriber();
+            }*/
             die();
         }
+
         else 
         {
             health--;

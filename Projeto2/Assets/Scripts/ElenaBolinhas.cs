@@ -19,7 +19,7 @@ public class ElenaBolinhas : MonoBehaviour
     void Start()
     {
 
-        PlayerCollision.elenaGetWoman += ChangeImageBalls;
+        PlayerCollision.ElenaGetWomanSubscriber += ChangeImageBalls;
 
         elena = GameObject.Find("PlayerShip");
 
@@ -49,6 +49,17 @@ public class ElenaBolinhas : MonoBehaviour
 
     }
 
+    void ChangeImageLostBalls()
+    {
+
+        quantidadeMulheres--;
+
+        Debug.Log(quantidadeMulheres);
+
+        GetComponent<SpriteRenderer>().sprite = m_Sprite[quantidadeMulheres];
+
+    }
+
     void LucioColisao() 
     {
         
@@ -56,7 +67,7 @@ public class ElenaBolinhas : MonoBehaviour
 
     void OnDisable() 
     {
-        PlayerCollision.elenaGetWoman -= ChangeImageBalls;
+        PlayerCollision.ElenaGetWomanSubscriber -= ChangeImageBalls;
 
         // caso o objeto não exista mais no jogo, a inscrição dele no evento será retirada;
     }

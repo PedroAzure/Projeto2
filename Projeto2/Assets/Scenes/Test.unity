@@ -600,6 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 696006620}
+  levelToLoad: 0
 --- !u!95 &696006620
 Animator:
   serializedVersion: 3
@@ -1000,6 +1001,82 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1901159268}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: countdown
+      value: 
+      objectReference: {fileID: 1901159267}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: scoreLimit
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 874800903}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: spawnEnemies
+      value: 
+      objectReference: {fileID: 874800904}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: time
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: shotVariantPrefab
+      value: 
+      objectReference: {fileID: 4640184679802431264, guid: eae113f605d1ace4a9d54166e5c12d86,
+        type: 3}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: changer
+      value: 
+      objectReference: {fileID: 696006619}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: lucioScore
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: shotCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: lucioLimit
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: lucioShip
+      value: 
+      objectReference: {fileID: 8325596420855437536}
+    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: tempoSemTiro
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997128123621421880, guid: a79f98c775b2260459da5d903f8526b4,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1685806046}
     - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: m_Enabled
@@ -1008,7 +1085,7 @@ PrefabInstance:
     - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: enemyRate
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3477854740377509826, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
@@ -1020,11 +1097,6 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 874800911}
-    - target: {fileID: 5997128123621421880, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1685806046}
     - target: {fileID: 3477854740377509824, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: animator
@@ -1085,77 +1157,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 1901159268}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: countdown
-      value: 
-      objectReference: {fileID: 1901159267}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: scoreLimit
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: trigger
-      value: 
-      objectReference: {fileID: 874800903}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: spawnEnemies
-      value: 
-      objectReference: {fileID: 874800904}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: time
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: shotVariantPrefab
-      value: 
-      objectReference: {fileID: 4640184679802431264, guid: eae113f605d1ace4a9d54166e5c12d86,
-        type: 3}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: changer
-      value: 
-      objectReference: {fileID: 696006619}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: lucioScore
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: shotCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: lucioLimit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: lucioShip
-      value: 
-      objectReference: {fileID: 8325596420855437536}
-    - target: {fileID: 3477854740377509884, guid: a79f98c775b2260459da5d903f8526b4,
-        type: 3}
-      propertyPath: tempoSemTiro
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 3477854740377509825, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: m_Enabled
@@ -1170,7 +1171,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: b52fac232ffa34fe48db59fb6626c058, type: 3}
+      objectReference: {fileID: 8300000, guid: d1db685bc3f8d9441bcdc0b68f433eec, type: 3}
     - target: {fileID: 3477854740377509830, guid: a79f98c775b2260459da5d903f8526b4,
         type: 3}
       propertyPath: m_Enabled

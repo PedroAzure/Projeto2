@@ -538,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 209731920}
+  levelToLoad: 0
 --- !u!95 &209731920
 Animator:
   serializedVersion: 3
@@ -2181,7 +2182,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 05ca9f61f9554a043b2de90a1176cb48, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 060795007d3d09947b78a16e0a9cff75, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1

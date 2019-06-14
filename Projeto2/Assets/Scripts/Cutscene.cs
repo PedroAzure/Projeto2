@@ -26,12 +26,12 @@ public class Cutscene : MonoBehaviour
 
     public LevelChanger changer;
 
+   
+
     int i = 0;
 
     void Start()
     {
-        
-
         sentences = new Queue<Image>();
 
         nameScene = SceneManager.GetActiveScene().name;
@@ -90,4 +90,5 @@ public class Cutscene : MonoBehaviour
 
         //changer.FadeToNextLevel();
     }
+
 }

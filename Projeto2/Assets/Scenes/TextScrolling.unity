@@ -1434,8 +1434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1515268c2e4410184e97086a58aa55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changer: {fileID: 2053379372}
-  MusicClip: {fileID: 0}
 --- !u!1001 &1026750216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2319,7 +2317,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7a5c84deca64a4a1fa3e57e605a5e957, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c4aaa5ae10d5b284c9f07f74da7bc1ac, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3245,6 +3243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2053379373}
+  levelToLoad: 0
 --- !u!95 &2053379373
 Animator:
   serializedVersion: 3

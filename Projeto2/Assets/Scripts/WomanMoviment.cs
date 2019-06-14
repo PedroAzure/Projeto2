@@ -15,7 +15,7 @@ public class WomanMoviment : MonoBehaviour
         controller = GameObject.FindWithTag("GameController");
         girls = controller.GetComponent<Girls>(); 
 
-        PlayerCollision.elenaGetWoman += KillWoman;
+        PlayerCollision.ElenaGetWomanSubscriber += KillWoman;
     }
 
     void Update()
@@ -34,7 +34,7 @@ public class WomanMoviment : MonoBehaviour
         min = Camera.main.ViewportToWorldPoint (new Vector2(0,0));
 
         if(transform.position.x < min.x - 2){
-            girls.numberOfEnemies--;
+            //girls.numberOfEnemies--;
             Destroy(gameObject);
         }
     }
@@ -46,7 +46,7 @@ public class WomanMoviment : MonoBehaviour
 
     void OnDisable() 
     {
-        PlayerCollision.elenaGetWoman -= KillWoman;
+        PlayerCollision.ElenaGetWomanSubscriber -= KillWoman;
 
         // caso o objeto não exista mais no jogo, a inscrição dele no evento será retirada;
     }

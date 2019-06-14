@@ -7,7 +7,7 @@ public class LevelChanger : MonoBehaviour
 {
     public Animator animator;
 
-    private int levelToLoad;
+    public int levelToLoad = 0;
 
     private void Awake()
     {
@@ -38,6 +38,16 @@ public class LevelChanger : MonoBehaviour
         else
             FadeToLevel(0);
         
+    }
+
+    public void FadePostDialogue()
+    {
+        FadeToLevel(6);   
+    }
+
+    public void FadeCenaFInal()
+    {
+        FadeToLevel(7);
     }
 
     public void OnFadeComplete()
@@ -99,6 +109,7 @@ public class LevelChanger : MonoBehaviour
 
     IEnumerator BeginLoad()
     {
+        Debug.Log(levelToLoad);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelToLoad);
 
         while (!asyncLoad.isDone)

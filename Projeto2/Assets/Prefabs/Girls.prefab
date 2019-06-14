@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5740253186008110787}
   - component: {fileID: 5740253186008110786}
   - component: {fileID: 4166453807556198262}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Girls
   m_TagString: girls
   m_Icon: {fileID: 0}
@@ -126,6 +126,8 @@ MonoBehaviour:
   nextGirlType: 1
   maxGirlTypes: 1
   numberOfEnemies: 0
+  quantidadeMulheres: 0
+  changer: {fileID: 0}
   m_SpriteWomen:
   - {fileID: 21300000, guid: b956300cb246746babd7b0d35afc0a2d, type: 3}
   - {fileID: 21300000, guid: 16482c81f7f5249ef91c06759f90df72, type: 3}

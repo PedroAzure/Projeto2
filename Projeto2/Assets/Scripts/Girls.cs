@@ -17,7 +17,9 @@ public class Girls : MonoBehaviour
 
     public float numberOfEnemies = 0;
 
-    private int quantidadeMulheres = 0;
+    public int quantidadeMulheres = 0;
+
+    public LevelChanger changer;
 
     //Set this in the Inspector
     public Sprite[] m_SpriteWomen;
@@ -26,7 +28,8 @@ public class Girls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerCollision.elenaGetWoman += ChangeImageWoman;
+        PlayerCollision.ElenaGetWomanSubscriber += ChangeImageWoman;
+        PlayerCollision.LostWomanSubscriber += ChangeImageLostWoman;
 
         girlPrefab.GetComponent<SpriteRenderer>().sprite = m_SpriteWomen[0];
 
@@ -43,7 +46,6 @@ public class Girls : MonoBehaviour
 
             if(nextGirl <= 0) 
             {
-                
                 nextGirl = girlRate;
 
                 Vector3 position = new Vector3(11, Random.Range(-4.4f, 4.3f), 0);
@@ -51,17 +53,32 @@ public class Girls : MonoBehaviour
                 girlPrefab.GetComponent<SpriteRenderer>().sprite = m_SpriteWomen[Random.Range(0, 4)];
 
                 Instantiate(girlPrefab, position, Quaternion.identity);
-
             } 
+        }
+
+        if(quantidadeMulheres == 8)
+        {
+            changer.FadeToNextLevel();
         }
     }
 
     void ChangeImageWoman ()
     {
-    
         if (quantidadeMulheres < 8)  
         {
             quantidadeMulheres++;
+
+            Debug.Log(quantidadeMulheres);
+        }
+    }
+
+    void ChangeImageLostWoman()
+    {
+        Debug.Log("ChangeLost");
+
+        if (quantidadeMulheres > 0)
+        {
+            quantidadeMulheres--;
 
             Debug.Log(quantidadeMulheres);
         }
@@ -70,7 +87,7 @@ public class Girls : MonoBehaviour
 
     void OnDisable() 
     {
-        PlayerCollision.elenaGetWoman -= ChangeImageWoman;
+        PlayerCollision.ElenaGetWomanSubscriber -= ChangeImageWoman;
 
         // caso o objeto não exista mais no jogo, a inscrição dele no evento será retirada;
     }

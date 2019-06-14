@@ -8,6 +8,8 @@ TagManager:
   - dialogBox
   - LevelChanger
   - girls
+  - lucio
+  - powerUp
   layers:
   - Default
   - TransparentFX
@@ -23,8 +25,8 @@ TagManager:
   - Background
   - PlayerShot
   - EnemyShot
-  - 
-  - 
+  - Lucio
+  - Pickup
   - 
   - 
   - 

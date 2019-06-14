@@ -96,25 +96,38 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(tempoConta == true)
+        if (numFase == 1)
         {
-            tempoSemTiro -= Time.deltaTime;
-        }
+            if (tempoConta == true)
+            {
+                tempoSemTiro -= Time.deltaTime;
+            }
 
-    	if(status.Equals(wait))
-        {
-           if((score >= scoreLimit && lucioTriggered == false) || (tempoSemTiro < 0 && lucioTriggered == false)
-           {
-                //countdown.SetActive(true);
-                lucioShip.SetTrigger("Entry");
-                lucioTriggered = true;
-                Invoke("StartCounting", 5f);
-           }
-        }
+            if (status.Equals(wait))
+            {
+                if ((score >= scoreLimit && lucioTriggered == false) || (tempoSemTiro < 0 && lucioTriggered == false))
+                {
+                    //countdown.SetActive(true);
+                    lucioShip.SetTrigger("Entry");
+                    lucioTriggered = true;
+                    Invoke("StartCounting", 5f);
+                }
+            }
 
-        else if(status.Equals(count) || status.Equals(arrived))
+            else if (status.Equals(count) || status.Equals(arrived))
+            {
+                UpdateTime();
+            }
+        }  
+
+        if(numFase == 2)
         {
-            UpdateTime();    
+            time -= Time.deltaTime;
+
+            if(time <= 0)
+            {
+                //changer.FadeToNextLevel();
+            }
         }
     }
 
@@ -124,55 +137,63 @@ public class GameController : MonoBehaviour
         {
             scoreText.text = "Inimigos: " + score.ToString();
         }
-        //else
-          //  scoreText.text = "Resgate:  " + score.ToString();
+        else
+            scoreText.text = "Resgate:  " + score.ToString();
     }
 
     void UpdateTime()
     {
-        if (time >= 0)
+        if (numFase == 1)
         {
-            time -= Time.deltaTime;
-            countdown.text = "Time: " + time.ToString("f0");
+            if (time >= 0)
+            {
+                time -= Time.deltaTime;
+                countdown.text = "Time: " + time.ToString("f0");
 
+            }
+
+            else
+            {
+                status = arrived;
+            }
+
+            if (status.Equals(arrived))
+            {
+                Debug.Log("Entrou Arrived");
+
+                //if (onLucioIsComing != null)
+                {
+                    //onLucioIsComing();
+                    shotCount -= Time.deltaTime;
+
+                    if (shotCount <= 0 && spawner != stop)
+                    {
+                        Vector3 position = new Vector3(-15f, Random.Range(-4.4f, 4.3f), -1f);
+
+                        Instantiate(shotVariantPrefab, position, Quaternion.identity);
+
+                        shotCount = 1f;
+                    }
+                }
+
+                if (lucioScore >= lucioLimit)
+                {
+                    spawner = stop;
+
+                    if (spawnEnemies.numberOfEnemies == 0)
+                    {
+                        changeSceneTimer -= Time.deltaTime;
+
+                        if (changeSceneTimer <= 0)
+                            changer.FadeToNextLevel();
+                    }
+                }
+            }
         }
 
         else
         {
-            status = arrived;
-        }
 
-        if(status.Equals(arrived))
-        {
-            Debug.Log("Entrou Arrived");
-
-            //if (onLucioIsComing != null)
-            {
-                //onLucioIsComing();
-                shotCount -= Time.deltaTime;
-
-                if (shotCount <= 0 && spawner != stop)
-                {
-                    Vector3 position = new Vector3(-15f, Random.Range(-4.4f, 4.3f), -1f);
-
-                    Instantiate(shotVariantPrefab, position, Quaternion.identity);
-
-                    shotCount = 1f;
-                }
-            }
-
-            if (lucioScore >= lucioLimit)
-            {
-                spawner = stop;
-
-                if (spawnEnemies.numberOfEnemies == 0)
-                {
-                    changeSceneTimer -= Time.deltaTime;
-
-                    if (changeSceneTimer <= 0)
-                        changer.FadeToNextLevel();
-                }
-            }
         }
     }
 
@@ -194,5 +215,16 @@ public class GameController : MonoBehaviour
     {
         trigger.StartDialog();
         status = count;
+    }
+
+    void Start2Counting()
+    {
+        //trigger.StartDialog();
+        status = count;
+    }
+
+    void Stop2Count()
+    {
+        status = wait;
     }
 }
